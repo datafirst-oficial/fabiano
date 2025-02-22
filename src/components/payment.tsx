@@ -49,12 +49,12 @@ export default function Payment() {
                     </div>
                     <div className="flex flex-col gap-4">
                         <div className="text-white flex flex-col">
-                            <span className="text-3xl line-through">DE R$000</span>
-                            <span className="text-xl ">POR 12X DE</span>
+                            <span className="text-3xl line-through">DE R$297</span>
+                            <span className="text-xl ">POR 6X DE</span>
                         </div>
                         <div className="text-white">
-                            <h5 className="text-[124px] -mt-0 leading-[124px]">000</h5>
-                            <span className="text-2xl -mt-12">ou R$00,00 à vista.</span>
+                            <h5 className="text-[124px] -mt-0 leading-[124px]">8,64</h5>
+                            <span className="text-2xl -mt-12">ou R$47,00 à vista.</span>
                         </div>
                     </div>
                     <div className="flex justify-center">
