@@ -5,10 +5,9 @@ import Button from "./button";
 interface FormProps {
     title: ReactNode
     description: ReactNode
-    form?: boolean
 }
 
-export function Header({ description, title, form }: FormProps) {
+export function Header({ description, title }: FormProps) {
     return (
         <header className="relative bg-[#f8f8f8] h-[1264px] sm:h-screen w-full flex items-start sm:items-center justify-center sm:px-4 py-8 sm:py-12 overflow-hidden">
             <Image

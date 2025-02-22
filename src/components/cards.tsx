@@ -30,6 +30,7 @@ function RightCard() {
             <div className="flex flex-col gap-4 bg-[#191919] py-8 px-8">
                 {data.map((item: string, index: number) => (
                     <CardItem
+                        key={index}
                         label={item}
                         icon={
                             <svg className="absolute top-1 left-0" width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,6 +76,7 @@ function LeftCard() {
             <div className="flex flex-col gap-4 bg-[#191919] py-8 px-8">
                 {data.map((item: string, index: number) => (
                     <CardItem
+                        key={index}
                         label={item}
                         icon={
                             <svg className="absolute top-1 left-0" width="28" height="28" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -73,7 +73,7 @@ export default function Page() {
               <h3 className="text-2xl sm:text-3xl text-left font-bold">Isso acontece na sua empresa?</h3>
               <ul className="flex flex-col gap-2 sm:gap-10 text-left">
                 {thisHappenAtYourCompany.map((item: string, index: number) => (
-                  <li className="relative flex items-start ps-8 sm:text-xl">
+                  <li key={index} className="relative flex items-start ps-8 sm:text-xl">
                     <svg className="absolute top-1 left-0" width="20" height="20" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="8" cy="8.65625" r="7.5" stroke="#0A70FF" />
                     </svg>
@@ -86,7 +86,7 @@ export default function Page() {
               <h3 className="text-2xl sm:text-3xl text-left font-bold">Você sofre <br className="hidden sm:block" />com:</h3>
               <ul className="flex flex-col gap-2 sm:gap-10 text-left">
                 {youWith.map((item: string, index: number) => (
-                  <li className="relative flex items-start ps-8 sm:text-xl">
+                  <li key={index} className="relative flex items-start ps-8 sm:text-xl">
                     <svg className="absolute top-1 left-0" width="20" height="20" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="8" cy="8.65625" r="7.5" stroke="#0A70FF" />
                     </svg>
@@ -193,7 +193,7 @@ export default function Page() {
               <hr className="w-96 border-[1px] border-black rounded-xl" />
               <ul className="flex flex-col gap-4 max-w-xl">
                 {data.map((item: string, index: number) => (
-                  <li className="relative flex items-center ps-10 sm:text-xl">
+                  <li key={index} className="relative flex items-center ps-10 sm:text-xl">
                     <svg className="absolute left-0" width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M26 13.6562C26 20.836 20.1797 26.6562 13 26.6562C5.8203 26.6562 0 20.836 0 13.6562C0 6.47655 5.8203 0.65625 13 0.65625C20.1797 0.65625 26 6.47655 26 13.6562Z" fill="#FF6100" />
                       <path d="M12.5584 7.00186C12.708 6.54121 13.3597 6.54121 13.5094 7.00186L14.8861 11.2389C14.9531 11.445 15.145 11.5844 15.3617 11.5844H19.8168C20.3012 11.5844 20.5025 12.2042 20.1107 12.4889L16.5064 15.1076C16.3312 15.2349 16.2578 15.4606 16.3248 15.6666L17.7015 19.9037C17.8512 20.3644 17.3239 20.7474 16.9321 20.4627L13.3278 17.8441C13.1525 17.7167 12.9152 17.7167 12.74 17.8441L9.13571 20.4627C8.74386 20.7474 8.21662 20.3644 8.36629 19.9037L9.74301 15.6666C9.80994 15.4606 9.73661 15.2349 9.56137 15.1076L5.95709 12.4889C5.56523 12.2042 5.76662 11.5844 6.25098 11.5844H10.7061C10.9227 11.5844 11.1147 11.445 11.1816 11.2389L12.5584 7.00186Z" fill="white" />
