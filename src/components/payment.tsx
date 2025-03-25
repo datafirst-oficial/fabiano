@@ -1,19 +1,18 @@
 import Image from "next/image";
 import { ButtonCheckout } from "./button";
 
-export default function Payment() {
+type PaymentTypes = {
+    leftData: string[]
+    rightData: string[]
+    de: string
+    porVezes: string
+    porValor: string
+    aVista: string
+    hrefLink: string
+    hrefLabel: string
+}
 
-    const leftData = [
-        'Passo a passo para contratar sem erros e formar uma equipe de alta performance.',
-        'Método aplicável para qualquer empresa, independente de porte ou segmento.',
-        'Guia prático, eficiente e fácil de implementar.',
-        'Suporte via chat para dúvidas.'
-    ]
-    const rightData = [
-        'Aplicável imediatamente para evitar contratações erradas e reduzir a rotatividade.',
-        '1 ano de acesso completo à Jornada de Contratação Bem Sucedida.',
-        'Criado por especialistas que entendem os desafios dos empresários.',
-    ]
+export default function Payment({ leftData, rightData, aVista, de, hrefLabel, hrefLink, porValor, porVezes }: PaymentTypes) {
 
     return (
         <div className="w-full flex items-center flex-col sm:flex-row gap-4 sm:gap-12">
@@ -49,12 +48,12 @@ export default function Payment() {
                     </div>
                     <div className="flex flex-col gap-4">
                         <div className="text-white flex flex-col">
-                            <span className="text-3xl line-through">DE R$297</span>
-                            <span className="text-xl ">POR 6X DE</span>
+                            <span className="text-3xl line-through">{de}</span>
+                            <span className="text-xl ">{porVezes}</span>
                         </div>
                         <div className="text-white">
-                            <h5 className="text-[124px] -mt-0 leading-[124px]">8,64</h5>
-                            <span className="text-2xl -mt-12">ou R$47,00 à vista.</span>
+                            <h5 className="text-[124px] -mt-0 leading-[124px]">{porValor}</h5>
+                            <span className="text-2xl -mt-12">{aVista}</span>
                         </div>
                     </div>
                     <div className="flex justify-center">
@@ -181,7 +180,7 @@ export default function Payment() {
                         </svg>
 
                     </div>
-                    <ButtonCheckout>QUERO FINALIZAR A MINHA COMPRA!</ButtonCheckout>
+                    <ButtonCheckout link={hrefLink}>{hrefLabel}</ButtonCheckout>
                     <div className="flex justify-center">
                         <p className="text-white text-2xl">PROMOÇÃO VÁLIDA <br />POR TEMPO LIMITADO!</p>
                     </div>

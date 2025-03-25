@@ -7,7 +7,7 @@ export default function Button({ children }: { children: ReactNode }) {
         <a href="#payment" className="w-full text-center flex justify-center uppercase text-lg my-shadow bg-[#FF6100] rounded-full border border-[#FFD8BF] py-3 px-8 text-white font-semibold">{children}</a>
     )
 }
-export function ButtonCheckout({ children }: { children: ReactNode }) {
+export function ButtonCheckout({ children, link }: { children: ReactNode, link: string }) {
 
     const [searchParams, setSearchParams] = useState<string | null>(null)
 
@@ -30,7 +30,7 @@ export function ButtonCheckout({ children }: { children: ReactNode }) {
     }, [])
 
     return (
-        <a href={`https://pay.hotmart.com/T98242290X?off=ngpqku28&checkoutMode=10${searchParams}`} className="w-full uppercase text-lg my-shadow-2 bg-[#FF6100] rounded-full border border-[#FFD8BF] py-3 px-8 text-white font-semibold">{children}</a>
+        <a href={`${link}${searchParams}`} className="w-full uppercase text-lg my-shadow-2 bg-[#FF6100] rounded-full border border-[#FFD8BF] py-3 px-8 text-white font-semibold">{children}</a>
     )
 }
 export function ButtonWpp({ children }: { children: ReactNode }) {

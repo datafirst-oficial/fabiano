@@ -8,6 +8,13 @@ import Image from "next/image";
 
 export default function Page() {
 
+  const headerList = [
+    'Para quem já contratou funcionários que não se encaixaram e precisou demitir rapidamente.',
+    'Para empresários que sentem dificuldade em encontrar candidatos alinhados com a cultura da empresa.',
+    'Para quem sofre com alta rotatividade e quer um processo seletivo mais eficiente.',
+    'Para quem quer um passo a passo validado para contratar com segurança e formar um time de alta performance.',
+  ]
+
   const thisHappenAtYourCompany = [
     'Você não sabe como iniciar um processo seletivo eficiente e acaba contratando sem um método estruturado.',
     'Seus processos seletivos são baseados em achismo ou intuição, sem critérios claros para escolher o melhor candidato.',
@@ -48,12 +55,41 @@ export default function Page() {
     }
   ]
 
+  const rightCardData = [
+    'Contratações erradas que geram prejuízo e retrabalho.',
+    'Funcionários desalinhados e sem perfil adequado para o cargo.',
+    'Rotatividade alta, forçando você a contratar e treinar sempre.',
+    'Falta de clareza para escolher o candidato certo.',
+    'Equipe desmotivada e baixa produtividade.'
+  ]
+
+  const leftCardData = [
+    'Contratações certeiras, sem achismos.',
+    'Funcionários alinhados à cultura da empresa desde o início.',
+    'Redução da rotatividade e equipe mais estável.',
+    'Processo seletivo estruturado, evitando erros e prejuízos.',
+    'Time produtivo e motivado, gerando mais resultados.'
+  ]
+
+  const leftPaymentData = [
+    'Passo a passo para contratar sem erros e formar uma equipe de alta performance.',
+    'Método aplicável para qualquer empresa, independente de porte ou segmento.',
+    'Guia prático, eficiente e fácil de implementar.',
+    'Suporte via chat para dúvidas.'
+  ]
+  const rightPaymentData = [
+    'Aplicável imediatamente para evitar contratações erradas e reduzir a rotatividade.',
+    '1 ano de acesso completo à Jornada de Contratação Bem Sucedida.',
+    'Criado por especialistas que entendem os desafios dos empresários.',
+  ]
+
   return (
     <>
       <Header
         title={<><strong>Siga o passo a passo para contratar sem erros</strong>, reduzir a rotatividade e formar equipes de alta performance.</>}
         description={<>Pare agora mesmo de perder dinheiro com contratações erradas e equipes desalinhadas!</>}
-
+        list={headerList}
+        btn_text="QUERO ACERTAR NA CONTRATAÇÃO"
       />
       <Section classNameS="py-12 sm:py-24 text-text1 linear px-4">
         <div className="flex flex-col items-center gap-4 text-center">
@@ -108,7 +144,12 @@ export default function Page() {
         <div className="flex flex-col items-center gap-4 sm:gap-8 text-center">
           <h4 className="text-3xl sm:text-4xl max-w-xl font-bold">Não é mágica - mas parece!</h4>
           <div>
-            <Cards />
+            <Cards
+              rightCardData={rightCardData}
+              leftCardData={leftCardData}
+              leftCardTitle={<>Com a Jornada de Contratação<br /> Bem Sucedida:</>}
+              rightCardTitle={<>Sem um processo <br />estruturado:</>}
+            />
           </div>
           <div>
             <Button>QUERO ACERTAR NA CONTRATAÇÃO!</Button>
@@ -146,7 +187,16 @@ export default function Page() {
             <h4 className="text-3xl sm:text-4xl sm:max-w-xl font-bold">Chegou a hora de <br />contratar do jeito certo!</h4>
             <p className="sm:text-xl">Pare de perder tempo e dinheiro com contratações erradas. Com um método validado, você vai formar um time produtivo e alinhado.</p>
           </div>
-          <Payment />
+          <Payment
+            leftData={leftPaymentData}
+            rightData={rightPaymentData}
+            de='DE R$297'
+            porVezes='POR 6X DE'
+            porValor='8,64'
+            aVista='ou R$47,00 à vista.'
+            hrefLink='https://pay.hotmart.com/T98242290X?off=ngpqku28&checkoutMode=10'
+            hrefLabel='QUERO FINALIZAR A MINHA COMPRA!'
+          />
         </div>
       </Section>
       <section className="bg-zinc-50">
@@ -214,14 +264,14 @@ export default function Page() {
             </div>
           </div>
           <Image
-                src="/images/bg5-sm.png"
-                layout="responsive"
-                width={`100`}
-                height={`100`}
-                alt=""
-                objectFit="contain"
-                className="absolute bottom-0 w-full sm:hidden"
-            />
+            src="/images/bg5-sm.png"
+            layout="responsive"
+            width={`100`}
+            height={`100`}
+            alt=""
+            objectFit="contain"
+            className="absolute bottom-0 w-full sm:hidden"
+          />
         </div>
       </section>
       <Section classNameS="pb-12 pt-20 sm:py-24 linear px-4">

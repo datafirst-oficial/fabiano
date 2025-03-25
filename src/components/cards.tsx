@@ -12,20 +12,12 @@ function CardItem({ label, icon }: { label: string, icon: ReactNode }) {
     )
 }
 
-function RightCard() {
-
-    const data = [
-        'Contratações erradas que geram prejuízo e retrabalho.',
-        'Funcionários desalinhados e sem perfil adequado para o cargo.',
-        'Rotatividade alta, forçando você a contratar e treinar sempre.',
-        'Falta de clareza para escolher o candidato certo.',
-        'Equipe desmotivada e baixa produtividade.'
-    ]
+function RightCard({ data, title }: {data: string[], title: ReactNode}) {
 
     return (
-        <div className="sm:w-[445px] rounded-3xl overflow-hidden">
+        <div className="h-full sm:w-[445px] rounded-3xl overflow-hidden">
             <div className="py-4 border-b border-white bg-[#D70000] px-4">
-                <h4 className="text-white text-lg sm:text-xl font-bold uppercase">Sem um processo <br />estruturado:</h4>
+                <h4 className="text-white text-lg sm:text-xl font-bold uppercase">{title}</h4>
             </div>
             <div className="flex flex-col gap-4 bg-[#191919] py-8 px-8">
                 {data.map((item: string, index: number) => (
@@ -58,20 +50,12 @@ function RightCard() {
         </div>
     )
 }
-function LeftCard() {
-
-    const data = [
-        'Contratações certeiras, sem achismos.',
-        'Funcionários alinhados à cultura da empresa desde o início.',
-        'Redução da rotatividade e equipe mais estável.',
-        'Processo seletivo estruturado, evitando erros e prejuízos.',
-        'Time produtivo e motivado, gerando mais resultados.'
-    ]
+function LeftCard({ data, title }: { data: string[], title: ReactNode}) {
 
     return (
-        <div className="sm:w-[445px] rounded-3xl overflow-hidden">
+        <div className="h-full sm:w-[445px] rounded-3xl overflow-hidden">
             <div className="py-4 border-b border-white linear-2  px-4">
-                <h4 className="text-white text-lg sm:text-xl font-bold uppercase">Com a Jornada de Contratação<br /> Bem Sucedida:</h4>
+                <h4 className="text-white text-lg sm:text-xl font-bold uppercase">{title}</h4>
             </div>
             <div className="flex flex-col gap-4 bg-[#191919] py-8 px-8">
                 {data.map((item: string, index: number) => (
@@ -91,11 +75,11 @@ function LeftCard() {
     )
 }
 
-export default function Cards() {
+export default function Cards({ leftCardData, rightCardData, leftCardTitle, rightCardTitle }: {leftCardData: string[], rightCardData: string[], leftCardTitle: ReactNode, rightCardTitle: ReactNode }) {
     return (
         <div className="flex sm:flex-row flex-col gap-6">
-            <RightCard />
-            <LeftCard />
+            <RightCard data={rightCardData} title={rightCardTitle} />
+            <LeftCard data={leftCardData} title={leftCardTitle} />
         </div>
     )
 }
