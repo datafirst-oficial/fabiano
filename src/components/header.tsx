@@ -38,7 +38,7 @@ export function Header({ description, title, list, btn_text }: FormProps) {
                     <p className="text-base sm:text-xl max-w-lg">{description}</p>
                     <ul className="flex flex-col gap-2 max-w-xl">
                         {list?.map((item: string, index: number) => (
-                            <li className="relative flex items-center p2s-7 sm:text-xl">
+                            <li key={index} className="relative flex items-center p2s-7 sm:text-xl">
                             {/* <svg className="absolute left-0" width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6.47485 15.5488C6.34308 15.6805 6.12944 15.6805 5.99767 15.5488L0.238592 9.78968C0.106821 9.65791 0.106821 9.44427 0.238593 9.3125L2.60302 6.94807C2.73493 6.81616 2.94884 6.81632 3.08056 6.94842L5.99755 9.87404C6.12931 10.0062 6.34331 10.0063 6.4752 9.87427L15.9194 0.420475C16.0512 0.28859 16.2649 0.288536 16.3967 0.420354L18.7614 2.78501C18.8932 2.91679 18.8932 3.13043 18.7614 3.2622L6.47485 15.5488Z" fill="#B9E89B" />
                             </svg> */}
