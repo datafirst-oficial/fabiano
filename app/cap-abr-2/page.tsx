@@ -131,6 +131,7 @@ export default function Page() {
             <div className="col-span-2 sm:grid sm:grid-cols-2 flex flex-col gap-4">
               {cardsData.map((card: string, index: number) => (
                 <CardItem2
+                  key={index}
                   className={index === 4 ? 'col-span-2 py-6' : ''}
                   label={card}
                   icon={
@@ -151,7 +152,7 @@ export default function Page() {
               <Slider carouselData={carouselData1} />
             </div>
             <div className="sm:w-full w-[356px]">
-              <ButtonCapt>QUERO ATRAIR, ENCANTAR <br/>E VENDER MAIS!</ButtonCapt>
+              <ButtonCapt>QUERO ATRAIR, ENCANTAR <br />E VENDER MAIS!</ButtonCapt>
             </div>
           </div>
         </Section>
@@ -212,7 +213,7 @@ export default function Page() {
         </section>
         <Section classNameS="pb-12 pt-12 sm:py-24 px-4 bg-zinc-900 overflow-hidden">
           <div className="flex flex-col items-center gap-8 px-4">
-            <h2 className="text-2xl sm:text-4xl font-bodl text-white font-semibold text-center max-w-4xl">Conheça as <span className="text-[#FF5F00]">ações <br className="sm:hidden"/> comerciais que a Malu <br className="sm:hidden"/>já criou</span> e que geraram <br className="sm:hidden"/>grandes resultados!</h2>
+            <h2 className="text-2xl sm:text-4xl font-bodl text-white font-semibold text-center max-w-4xl">Conheça as <span className="text-[#FF5F00]">ações <br className="sm:hidden" /> comerciais que a Malu <br className="sm:hidden" />já criou</span> e que geraram <br className="sm:hidden" />grandes resultados!</h2>
             <div className="relative w-full max-w-[1700px]">
               <Slider2
                 carouselData={carouselData2}

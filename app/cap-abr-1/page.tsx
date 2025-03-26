@@ -123,6 +123,7 @@ export default function Page() {
             <div className="col-span-2 sm:grid sm:grid-cols-2 flex flex-col gap-4">
               {cardsData.map((card: string, index: number) => (
                 <CardItem2
+                  key={index}
                   className={index === 4 ? 'col-span-2 py-6' : ''}
                   label={card}
                   icon={
