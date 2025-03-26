@@ -9,11 +9,11 @@ import { ReactNode } from "react";
 export default function Page() {
 
   const cards = [
-    <span className="text-lg">Como usar as principais datas comerciais dos próximos 3 meses – Dia das Mães, Páscoa, Dia dos Namorados e Festa Junina – para gerar mais vendas.</span>,
-    <span className="text-lg">Como atrair clientes e encher sua loja sem depender de sorte.</span>,
-    <span className="text-lg">Como ativar seu time de vendas e garantir que eles batam metas.</span>,
-    <span className="text-lg">Como criar campanhas encantadoras que realmente convertam.</span>,
-    <span className="text-lg">Como estruturar um plano de ação para vender mais e crescer com previsibilidade.</span>,
+    <span key={1} className="text-lg">Como usar as principais datas comerciais dos próximos 3 meses – Dia das Mães, Páscoa, Dia dos Namorados e Festa Junina – para gerar mais vendas.</span>,
+    <span key={2} className="text-lg">Como atrair clientes e encher sua loja sem depender de sorte.</span>,
+    <span key={3} className="text-lg">Como ativar seu time de vendas e garantir que eles batam metas.</span>,
+    <span key={4} className="text-lg">Como criar campanhas encantadoras que realmente convertam.</span>,
+    <span key={5} className="text-lg">Como estruturar um plano de ação para vender mais e crescer com previsibilidade.</span>,
   ]
 
   const carouselData1 = [
@@ -64,8 +64,6 @@ export default function Page() {
     // '44', 
     // '45'
   ]
-
-
 
   const cardsData = [
     'Quer vender mais e bater suas metas nos próximos 3 meses usando as datas sazonais a seu favor.',
