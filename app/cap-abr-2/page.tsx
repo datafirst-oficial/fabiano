@@ -84,7 +84,7 @@ export default function Page() {
     <>
       <HeaderForms
         title={<>Venda mais e <span className="text-[#FF5F00]">bata suas metas nos próximos 3 meses</span> usando as datas sazonais a seu favor!</>}
-        description={<>Um dia imersivo para planejar as estratégias de vendas dos próximos 3 meses da sua loja para sua loja fazer pico de 200k de faturamento.</>}
+        description={<>Um dia imersivo para planejar as estratégias de vendas dos próximos 3 meses e levar a sua loja ao pico de R$200 mil em faturamento.</>}
         list={[]}
         btn_text="QUERO PARTICIPAR DA IMERSÃO!"
       />
