@@ -141,8 +141,8 @@ export default function Page() {
             <div className="relative w-full sm:max-w-3xl">
               <Slider carouselData={carouselData1} />
             </div>
-            <div>
-              <ButtonCapt>QUERO ATRAIR, ENCANTAR<br /> E VENDER MAIS!</ButtonCapt>
+            <div className="sm:w-96 w-[356px]">
+              <ButtonCapt>QUERO ATRAIR, ENCANTAR <br className="block sm:hidden"/>E VENDER MAIS!</ButtonCapt>
             </div>
           </div>
         </Section>
