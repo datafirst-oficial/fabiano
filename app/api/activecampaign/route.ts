@@ -50,6 +50,20 @@ export async function POST(request: Request) {
             });
         }
 
+        await fetch('https://grupomsmarketing.api-us1.com/api/3/contactTags', {
+            method: 'POST',
+            headers: {
+              'Api-Token': '384e7ff110db821cd91aea6153a4ad9857905757995d79d28c29a0098edc013b4bde8e7d',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              contactTag: {
+                contact: contactId,
+                tag: 29
+              }
+            })
+          });
+
         return NextResponse.json({})
     } catch (error) {
         console.log(error)
