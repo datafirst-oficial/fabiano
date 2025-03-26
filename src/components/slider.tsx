@@ -58,7 +58,7 @@ export function Slider2({carouselData}: {carouselData: string[]}) {
             grabCursor={true}
             loop={true}
             autoplay={{
-                delay: 500,
+                delay: 1000,
             }}
             modules={[Navigation, Autoplay]}
             breakpoints={{
@@ -66,18 +66,17 @@ export function Slider2({carouselData}: {carouselData: string[]}) {
                     slidesPerView: 8
                 },
                 500: {
-                    slidesPerView: 1
+                    slidesPerView: 8
                 },
                 300: {
-                    slidesPerView: 1
+                    slidesPerView: 8
                 }
             }}
             className="w-full mySwiper flex items-center"
         >
             {carouselData.map((item, index) => (
-                <SwiperSlide className="w-[356px]" key={index}>
-                    <span>{item}</span>
-                    <div className="relative w-[356px] h-[356px]">
+                <SwiperSlide className="w-[200px] sm:w-[356px]" key={index}>
+                    <div className="relative h-[256px] w-[200px] sm:w-[356px] sm:h-[356px]">
                         <Image
                             src={`/images/actions/${item}.png`}
                             alt="Imagem de ação da Malu"

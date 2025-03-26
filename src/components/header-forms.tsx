@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image";
-import { ReactNode } from "react";
+import { useRouter } from "next/navigation";
+import { FormEvent, ReactNode, useState } from "react";
 
 interface FormProps {
     title: ReactNode
@@ -8,7 +11,91 @@ interface FormProps {
     btn_text: string
 }
 
+type DataType = {
+    name: string,
+    email: string,
+    phone: string
+}
+
 export function HeaderForms({ description, title, list }: FormProps) {
+
+    const [isSubmiting, setIsSubmiting] = useState<boolean>(false)
+    const [error, setError] = useState<string>('')
+    const [data, setData] = useState<DataType>({
+        name: '',
+        email: '',
+        phone: ''
+    })
+
+    function formatPhone(phone: string): string {
+        phone = phone.replace(/\D/g, '');
+
+        phone = phone.replace(/^(\d{2})(\d)/, '($1) $2');
+        phone = phone.replace(/(\d{5})(\d)/, '$1-$2');
+
+        return phone;
+    }
+
+    function onChange({ type, value }: { type: keyof DataType, value: string }) {
+
+        if (type === 'phone') {
+            setData((prevState) => ({
+                ...prevState,
+                [type]: formatPhone(value)
+            }))
+            return
+        }
+
+        setData((prevState) => ({
+            ...prevState,
+            [type]: value
+        }))
+    }
+
+    async function formSubmit(e: FormEvent) {
+        e.preventDefault()
+        setIsSubmiting(true)
+
+        if (data.name.length === 0 || data.email.length === 0 || !data.email.includes('@') || data.phone.length !== 15) {
+            setError('Preencha corretamente os campso abaixo.')
+            setIsSubmiting(false)
+            return
+        }
+
+        const utms = { utm_source: '', utm_campaign: '', utm_medium: '', utm_content: '', utm_term: '' }
+        const params = new URLSearchParams(window.location.search)
+
+        utms.utm_source = params.get('utm_source') || 'nao-traqueado'
+        utms.utm_campaign = params.get('utm_campaign') || 'nao-traqueado'
+        utms.utm_medium = params.get('utm_medium') || 'nao-traqueado'
+        utms.utm_content = params.get('utm_content') || 'nao-traqueado'
+        utms.utm_term = params.get('utm_term') || 'nao-traqueado'
+
+        try {
+            const res = await fetch('/api/activecampaign', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...data,
+                    utm_source: utms.utm_source,
+                    utm_campaign: utms.utm_campaign,
+                    utm_medium: utms.utm_medium,
+                    utm_content: utms.utm_content,
+                    utm_term: utms.utm_term,
+                }),
+            });
+
+            window.location.href = 'https://metodoencantar.com.br/obrigado-dt/'
+            setIsSubmiting(false)
+            setData({ name: '', email: '', phone: '' });
+        } catch (err) {
+            console.error('Erro geral:', err);
+            setIsSubmiting(false)
+        }
+    }
+
     return (
         <header className="relative bg-[#f8f8f8] h-[1200px] sm:h-screen w-full flex items-start sm:items-center justify-center sm:px-4 py-8 sm:py-12 overflow-hidden pt-14">
             <div className="absolute top-0 left-0 w-full flex items-center justify-center py-2 bg-zinc-800 z-[1000]">
@@ -49,13 +136,24 @@ export function HeaderForms({ description, title, list }: FormProps) {
                                 </li>
                             ))}
                         </ul>}
-                        <div className="w-full flex flex-col gap-2">
-                            <input type="text" className="text-sm focus:outline-zinc-300 w-full py-2 bg-white border rounded-md px-4" placeholder="Seu nome:" />
-                            <input type="text" className="text-sm focus:outline-zinc-300 w-full py-2 bg-white border rounded-md px-4" placeholder="Seu melhor email:" />
-                            <input type="tel" className="text-sm focus:outline-zinc-300 w-full py-2 bg-white border rounded-md px-4" placeholder="Seu WhatsApp:" />
+                        <form onSubmit={(e: FormEvent) => formSubmit(e)} className="w-full flex flex-col gap-2">
+                            {error.length > 0 && <span className="text-red-700 text-sm">{error}</span>}
+                            <input value={data.name} onChange={(e) => onChange({ type: 'name', value: e.target.value })} required type="text" className="text-sm focus:outline-zinc-300 w-full py-2 bg-white border rounded-md px-4" placeholder="Seu nome:" />
+                            <input value={data.email} onChange={(e) => onChange({ type: 'email', value: e.target.value })} required type="email" className="text-sm focus:outline-zinc-300 w-full py-2 bg-white border rounded-md px-4" placeholder="Seu melhor email:" />
+                            <input value={data.phone} maxLength={15} onChange={(e) => onChange({ type: 'phone', value: e.target.value })} required type="tel" className="text-sm focus:outline-zinc-300 w-full py-2 bg-white border rounded-md px-4" placeholder="Seu WhatsApp:" />
                             <div className="relative w-full flex flex-col items-center gap-3">
                                 <div className="w-full flex gap-3">
-                                    <button className="w-full text-center flex justify-center uppercase my-shadow bg-[#FF6100] rounded-md py-3 px-8 text-white font-semibold">QUERO VENDER MAIS!</button>
+                                    <button type="submit" className="w-full text-center flex justify-center uppercase my-shadow bg-[#FF6100] rounded-md py-3 px-8 text-white font-semibold">
+                                        {isSubmiting ? (
+                                            <div className="flex-col gap-4 w-full flex items-center justify-center">
+                                                <div className="w-5 h-5 border-2 text-blue-400 text-4xl animate-spin border-white flex items-center justify-center border-t-blue-400 rounded-full">
+
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <span>QUERO VENDER MAIS!</span>
+                                        )}
+                                    </button>
                                     {/* <Button>{btn_text}</Button> */}
                                     {/* <svg className="hidden sm:block" width="55" height="56" viewBox="0 0 55 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="27.5" cy="28.1562" r="27.5" fill="#0A70FF" />
@@ -69,7 +167,7 @@ export function HeaderForms({ description, title, list }: FormProps) {
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

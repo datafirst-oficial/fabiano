@@ -15,7 +15,7 @@ function CardItem({ label, icon, className }: { label: string, icon: ReactNode, 
 export function CardItem2({ label, icon, className }: { label: string, icon: ReactNode, className?: string }) {
 
     return (
-        <div className={`px-8 bg-zinc-800 py-3 rounded-xl py-4 ${className}`}>
+        <div className={`pe-6 ps-4 sm:px-8 bg-zinc-800 py-3 rounded-xl py-4 ${className}`}>
             <div className="relative ps-10 text-left">
                 {icon}
                 <p className="text-white text-lg">{label}</p>

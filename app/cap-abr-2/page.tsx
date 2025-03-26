@@ -145,7 +145,7 @@ export default function Page() {
         </Section>
         <Section classNameS="py-12 sm:py-24 text-text1 linear px-4 overflow-hidden">
           <div className="flex flex-col items-center gap-8">
-            <h4 className="text-2xl sm:text-4xl font-bold">Veja o que nossas alunas dizem:</h4>
+            <h4 className="text-2xl sm:text-4xl font-bold text-center">Veja o que nossas <br className="sm:hidden block"/>alunas dizem:</h4>
             <div className="relative w-full sm:max-w-3xl">
               <Slider carouselData={carouselData1} />
             </div>
@@ -167,7 +167,7 @@ export default function Page() {
             {/* <div className="sm:hidden absolute top-0 w-full h-full bg-black/60"></div> */}
             <div className="w-full sm:max-w-6xl sm:grid sm:grid-cols-5 gap-12 sm:gap-12 flex flex-col z-50  ">
               <div className="col-span-3 text-text1 flex flex-col gap-3 sm:gap-6 justify-start items-start sm:items-start sm:justify-start sm:text-left px-4 sm:px-0">
-                <h1 className="text-2xl text-4xl font-bold"><span className="text-[#FF7F01]">Malu Scaffi</span></h1>
+                <h1 className="text-2xl sm:text-4xl font-bold"><span className="text-[#FF7F01]">Malu Scaffi</span></h1>
                 <hr className="w-96 border-[1px] border-black rounded-xl" />
                 <div className="flex flex-col gap-4">
                   <div>
