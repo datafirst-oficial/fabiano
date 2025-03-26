@@ -86,7 +86,7 @@ export function HeaderForms({ description, title, list }: FormProps) {
                 }),
             });
 
-            window.location.href = 'https://metodoencantar.com.br/obrigado-dt/'
+            window.location.href = `https://metodoencantar.com.br/obrigado-dt/?email=${data.email}`
             setIsSubmiting(false)
             setData({ name: '', email: '', phone: '' });
         } catch (err) {
