@@ -54,9 +54,6 @@ export async function POST(request: Request) {
 
         return NextResponse.json({})
     } catch (error) {
-        console.log('ERRO')
-        // console.log(error)
-        // console.error('Erro na integração com o ActiveCampaign:', error);
-        // return res.status(500).json({ error: 'Erro interno do servidor' });
+        console.log(error)
     }
 }
