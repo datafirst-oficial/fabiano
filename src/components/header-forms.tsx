@@ -71,7 +71,7 @@ export function HeaderForms({ description, title, list }: FormProps) {
         utms.utm_term = params.get('utm_term') || 'nao-traqueado'
 
         try {
-            const res = await fetch('/api/activecampaign', {
+            await fetch('/api/activecampaign', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

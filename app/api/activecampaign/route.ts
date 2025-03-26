@@ -33,8 +33,6 @@ export async function POST(request: Request) {
         const data = await response.json();
         const contactId = data?.contact?.id;
 
-        console.log(contactId)
-
         for (const field of customFields) {
             await fetch(`https://grupomsmarketing.api-us1.com/api/3/fieldValues`, {
                 method: 'POST',
