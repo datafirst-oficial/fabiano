@@ -7,6 +7,13 @@ export default function Button({ children }: { children: ReactNode }) {
         <a href="#payment" className="w-full text-center flex justify-center uppercase text-lg my-shadow bg-[#FF6100] rounded-full border border-[#FFD8BF] py-3 px-8 text-white font-semibold">{children}</a>
     )
 }
+
+export function ButtonCapt({ children }: { children: ReactNode }) {
+    return (
+        <a href="#forms" className="w-full text-center flex justify-center uppercase text-lg my-shadow bg-[#FF6100] rounded-full border border-[#FFD8BF] py-3 px-8 text-white font-semibold">{children}</a>
+    )
+}
+
 export function ButtonCheckout({ children, link }: { children: ReactNode, link: string }) {
 
     const [searchParams, setSearchParams] = useState<string | null>(null)

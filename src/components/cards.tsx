@@ -1,12 +1,35 @@
 import { ReactNode } from "react"
 
-function CardItem({ label, icon }: { label: string, icon: ReactNode }) {
+function CardItem({ label, icon, className }: { label: string, icon: ReactNode, className?: string }) {
 
     return (
-        <div className="px-8 bg-text1 py-3 rounded-xl">
+        <div className={`px-8 bg-text1 py-3 rounded-xl ${className}`}>
             <div className="relative ps-11 text-left">
                 {icon}
                 <p className="text-white text-sm">{label}</p>
+            </div>
+        </div>
+    )
+}
+
+export function CardItem2({ label, icon, className }: { label: string, icon: ReactNode, className?: string }) {
+
+    return (
+        <div className={`px-8 bg-zinc-800 py-3 rounded-xl py-4 ${className}`}>
+            <div className="relative ps-10 text-left">
+                {icon}
+                <p className="text-white text-lg">{label}</p>
+            </div>
+        </div>
+    )
+}
+export function CardItem3({ label, index, className }: { label: string, index: number, className?: string }) {
+
+    return (
+        <div className={`px-8 bg-zinc-800 py-3 rounded-xl py-4 ${className}`}>
+            <div className="relative ps-10 text-left">
+                <span className="rounded-full border text-white bg-[#FF5F00]">{index}</span>
+                <p className="text-white text-lg">{label}</p>
             </div>
         </div>
     )
@@ -80,6 +103,14 @@ export default function Cards({ leftCardData, rightCardData, leftCardTitle, righ
         <div className="flex sm:flex-row flex-col gap-6">
             <RightCard data={rightCardData} title={rightCardTitle} />
             <LeftCard data={leftCardData} title={leftCardTitle} />
+        </div>
+    )
+}
+
+export function Card({children}: { children: ReactNode}) {
+    return (
+        <div className="w-full h-full rounded-xl px-8 p-6 text-left">
+            <p className="text-white">{children}</p>
         </div>
     )
 }
