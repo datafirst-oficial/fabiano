@@ -10,8 +10,8 @@ export default function Page() {
   return (
     <>
       <Header
-        title={<>10 Anos de Crescimento em 2: O <span className="text-[#edbe32]">Plano Para Quem Quer Liderar</span> no Mercado Tributário.</>}
-        description={<>No dia 09 de abril, você vai conhecer as quatro metas que transformarão sua carreira e garantirão seu lugar entre os melhores.</>}
+        title={<>Profissionais Tributários que aprendem a Estratégia certa Sempre Chegam ao Topo mais rápido</>}
+        description={<>E agora é a sua vez: participe da Super Live e aprenda como acelerar seu crescimento na carreira.</>}
         list={[]}
         btn_text="QUERO ACERTAR NA CONTRATAÇÃO"
         badge="Este conteúdo é exclusivo para profissionais que trabalham na Área tributária."
