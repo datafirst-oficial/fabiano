@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,31 +9,42 @@
   scroll-behavior: smooth;
 }
 
-.my-shadow {
-  box-shadow: 0px 0px 25px 0px rgba(255, 129, 54, 1);
+.playfair {
+  font-family: "Playfair Display", serif;
 }
+
+.my-shadow {
+  box-shadow:
+    0 0 20px rgba(242, 190, 53, 0.1),
+    0 0 30px rgba(242, 190, 53, 0.1),
+    0 0 40px rgba(242, 190, 53, 0.5);
+}
+
 .my-shadow-2 {
   box-shadow: 0px 0px 25px 0px #D0E4FF;
 }
+
 .linear {
-  background: linear-gradient( 135deg, #e5e5e5 44%, #f7f7f7 93%);
+  background: linear-gradient(135deg, #e5e5e5 44%, #f7f7f7 93%);
 }
+
 .linear-2 {
-  background: linear-gradient(to right, 
-    #004AA3 0%, 
-    #01489E 19%, 
-    #074592 39%, 
-    #10407D 59%, 
-    #1C3860 79%, 
-    #2D2E3B 99%, 
-    #2E2E3A 100%
-);
+  background: linear-gradient(to right,
+      #004AA3 0%,
+      #01489E 19%,
+      #074592 39%,
+      #10407D 59%,
+      #1C3860 79%,
+      #2D2E3B 99%,
+      #2E2E3A 100%);
 }
+
 .linear-3 {
   background: linear-gradient(to right, #F15A29 0%, #FF7F01 100%);
 }
+
 .linear-4 {
-  background: linear-gradient( 135deg, #f7f7f7 44%, #e5e5e5 93%);
+  background: linear-gradient(135deg, #f7f7f7 44%, #e5e5e5 93%);
 }
 
 .swiper {
@@ -38,6 +52,7 @@
   height: 100%;
   display: flex;
 }
+
 .swiper-wrapper {
   display: flex;
   align-items: center;
@@ -62,7 +77,7 @@
 
 @media (max-width: 426px) {
   .swiper {
-      overflow: hidden;
+    overflow: hidden;
   }
 }
 
