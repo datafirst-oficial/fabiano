@@ -25,7 +25,7 @@ export function Header({ description, title, list, badge }: FormProps) {
                 <p className="w-[80%] text-center">{badge}</p>
             </div>
             {/* <div className="sm:hidden absolute top-0 w-full h-full bg-black/60"></div> */}
-            <div className="w-full sm:max-w-6xl sm:grid sm:grid-cols-5 gap-12 sm:gap-12 flex flex-col z-50 pt-12">
+            <div className="w-full sm:max-w-6xl sm:grid sm:grid-cols-5 gap-12 sm:gap-12 flex flex-col z-50 sm:pt-0 -translate-y-12  pt-20">
                 <div id="forms" className="text-white col-span-3 text-text1 flex flex-col gap-3 sm:gap-6 justify-start items-start sm:items-start sm:justify-start sm:text-left px-4 sm:px-0">
                     <div className="relative sm:w-[200px] sm:h-[200px] w-[156px] h-[156px]">
                         <Image
