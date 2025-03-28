@@ -6,8 +6,8 @@ const playfair_display = Playfair_Display({ weight: ['400', '500', '600', '700']
 const inter = Inter({ weight: ['300', '400', '500', '600', '700'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Contratação Bem Sucedida",
-  description: "Contratação Bem Sucedida",
+  title: "Plano JK | Altair Toledo",
+  description: "10 Anos de Crescimento em 2",
 };
 
 export default function RootLayout({
