@@ -15,7 +15,7 @@ export async function POST(request: Request) {
             },
             body: JSON.stringify({
                 email,
-                firstName: name,
+                name,
                 phone,
                 utm_source,
                 utm_campaign,
