@@ -1,5 +1,6 @@
 "use client"
 
+import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
 type DataType = {
@@ -10,6 +11,7 @@ type DataType = {
 
 export default function Forms() {
 
+    const { push } = useRouter()
     const [isSubmiting, setIsSubmiting] = useState<boolean>(false)
     const [error, setError] = useState<string>('')
     const [data, setData] = useState<DataType>({
@@ -78,7 +80,7 @@ export default function Forms() {
                 }),
             });
 
-            window.location.href = `https://metodoencantar.com.br/obrigado-dt/?email=${data.email}`
+            push('/obrigado')
             setIsSubmiting(false)
             setData({ name: '', email: '', phone: '' });
         } catch (err) {
