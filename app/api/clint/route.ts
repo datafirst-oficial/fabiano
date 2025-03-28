@@ -16,7 +16,7 @@ export async function POST(request: Request) {
             body: JSON.stringify({
                 email,
                 name,
-                phone,
+                phone: `55${phone.replace('(', '').replace(')', '').replace(' ', '').replace('-', '')}`,
                 utm_source,
                 utm_campaign,
                 utm_medium,
