@@ -13,7 +13,6 @@ export default function Forms() {
 
     const { push } = useRouter()
     const [isSubmiting, setIsSubmiting] = useState<boolean>(false)
-    const [error, setError] = useState<string>('')
     const [data, setData] = useState<DataType>({
         name: '',
         email: '',
@@ -50,7 +49,6 @@ export default function Forms() {
         setIsSubmiting(true)
 
         if (data.name.length === 0 || data.email.length === 0 || !data.email.includes('@') || data.phone.length !== 15) {
-            setError('Preencha corretamente os campso abaixo.')
             setIsSubmiting(false)
             return
         }
@@ -83,8 +81,8 @@ export default function Forms() {
             push('/obrigado')
             setIsSubmiting(false)
             setData({ name: '', email: '', phone: '' });
-        } catch (err) {
-            console.error('Erro geral:', err);
+        } catch (e) {
+            console.log(e)
             setIsSubmiting(false)
         }
     }
