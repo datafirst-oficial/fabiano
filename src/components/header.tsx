@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { ReactNode } from "react";
+import { ReactNode, SetStateAction } from "react";
+import Button from "./button";
 
 interface FormProps {
     title: ReactNode
@@ -7,11 +8,13 @@ interface FormProps {
     list?: string[]
     btn_text: string
     badge?: string
+    open: boolean
+    setOpen: React.Dispatch<SetStateAction<boolean>>
 }
 
-export function Header({ description, title, list, badge }: FormProps) {
+export function Header({ description, title, list, badge, open, setOpen }: FormProps) {
     return (
-        <header className="relative bg-black h-[1100px] sm:h-screen w-full flex items-start sm:items-center justify-center sm:px-4 py-8 sm:py-12 overflow-hidden">
+        <header className="relative bg-black h-[1280px] sm:h-screen w-full flex items-start sm:items-center justify-center sm:px-4 py-8 sm:py-12 overflow-hidden">
             <div className="absolute bottom-0 w-full h-24 bg-gradient-to-b from-transparent to-black"></div>
             <div className="absolute right-0 top-0 bg-[#edbe32] w-[64px] h-[224px] blur-[100px] block sm:hidden"></div>
             <Image
@@ -39,6 +42,12 @@ export function Header({ description, title, list, badge }: FormProps) {
                         <p className="border px-4 py-2 rounded-full text-sm hidden sm:block">{badge}</p>
                         <h1 className="playfair text-3xl sm:text-[40px] sm:leading-[48px] font-bold">{title}</h1>
                         <p className="text-lg sm:text-xl max-w-lg font-thin">{description}</p>
+                        <div className="sm:max-w-md w-full">
+                            <Button
+                                open={open}
+                                setOpen={setOpen}
+                            >Inscreva-se</Button>
+                        </div>
                     </div>
                     <ul className="flex flex-col gap-2 max-w-xl">
                         {list?.map((item: string, index: number) => (

@@ -1,15 +1,26 @@
+'use client'
+
 import Button from "@/src/components/button";
 import { SimpleCard } from "@/src/components/cards";
 import Forms from "@/src/components/forms";
 import { Header } from "@/src/components/header";
 import Section from "@/src/components/section";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Page() {
 
+  const [open, setOpen] = useState<boolean>(false)
+
   return (
     <>
+      <Forms
+        open={open}
+        setOpen={setOpen}
+      />
       <Header
+        open={open}
+        setOpen={setOpen}
         title={<>10 Anos de Crescimento em 2: O <span className="text-[#edbe32]">Plano Para Quem Quer Liderar</span> no Mercado Tributário.</>}
         description={<>No dia 09 de abril, você vai conhecer as quatro metas que transformarão sua carreira e garantirão seu lugar entre os melhores.</>}
         list={[]}
@@ -33,13 +44,7 @@ export default function Page() {
             objectFit="contain"
           />
         </div>
-        <Section classNameS="pb-12 pt-8 sm:pt-40 sm:pb-12 px-4" id="inscricao">
-          <div className="flex flex-col items-center gap-12">
-            <h2 className="max-w-3xl text-white text-3xl text-left sm:text-center font-bold">Coloque suas informações nas caixas abaixo e envie para confirmar sua <span className="text-[#edbe32]">participação no Plano JK</span>.</h2>
-            <Forms />
-          </div>
-        </Section>
-        <Section classNameS="sm:pt-24 px-4">
+        <Section classNameS="sm:pt-48 pt-12 px-4">
           <div className="absolute left-0 w-[96px] h-[296px] bg-[#edbe32] blur-[180px]"></div>
           <div className="flex flex-col gap-20 items-center">
             <div className="max-w-5xl sm:grid sm:grid-cols-2 flex flex-col items-start gap-12 z-50">
@@ -64,8 +69,14 @@ export default function Page() {
             </div>
           </div>
         </Section>
-        <section className="flex justify-center py-12 sm:py-24">
+        <section className="flex flex-col items-center py-12 sm:py-24 gap-4">
           <p className="border border-[#edbe32]/10 px-4 sm:px-8 py-4 sm:rounded-full uppercase text-center sm:text-2xl text-white font-bold sm:my-shadow bg-zinc-900">Se você quer <span className="text-[#edbe32]">se tornar referência</span> no setor, este é o momento.</p>
+          <div>
+            <Button
+              open={open}
+              setOpen={setOpen}
+            >Inscreva-se</Button>
+          </div>
         </section>
         <Section classNameS="pb-8 px-4 sm:mt-0 -mt-16">
           <div className="sm:grid sm:grid-cols-2 items-center gap-24 z-50">
@@ -82,7 +93,10 @@ export default function Page() {
               <p className="font-thin text-lg">Sócio da KPMG com mais de 25 anos de experiência na área tributária. Durante sua trajetória, ajudou profissionais e empresas a se posicionarem estrategicamente para crescer de forma acelerada. Agora, ele vai revelar em primeira mão o Plano JK, um método exclusivo para você transformar sua carreira em tempo recorde.</p>
               <p className="font-thin text-lg">Clique no botão abaixo, faça sua inscrição e venha descobrir como crescer 20 anos em 2!</p>
               <div className="flex w-full sm:max-w-sm">
-                <Button>Inscreva-se</Button>
+                <Button
+                  open={open}
+                  setOpen={setOpen}
+                >Inscreva-se</Button>
               </div>
             </div>
           </div>

@@ -1,15 +1,26 @@
+'use client'
+
 import Button from "@/src/components/button";
 import { SimpleCard } from "@/src/components/cards";
 import Forms from "@/src/components/forms";
 import { Header } from "@/src/components/header";
 import Section from "@/src/components/section";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Page() {
 
+  const [open, setOpen] = useState<boolean>(false)
+
   return (
     <>
+      <Forms
+        open={open}
+        setOpen={setOpen}
+      />
       <Header
+        open={open}
+        setOpen={setOpen}
         title={<>10 Anos de Crescimento em 2: O <span className="text-[#edbe32]">Plano Para Quem Quer Liderar</span> no Mercado Tributário.</>}
         description={<>No dia 09 de abril, você vai conhecer as quatro metas que transformarão sua carreira e garantirão seu lugar entre os melhores.</>}
         list={[]}
@@ -25,13 +36,7 @@ export default function Page() {
             objectFit="contain"
           />
         </div>
-        <Section classNameS="pb-12 pt-8 sm:pt-40 sm:pb-12 px-4" id="inscricao">
-          <div className="flex flex-col items-center gap-12">
-            <h2 className="max-w-3xl text-white text-3xl text-left sm:text-center font-bold">Coloque suas informações nas caixas abaixo e envie para confirmar sua <span className="text-[#edbe32]">participação no Plano JK</span>.</h2>
-            <Forms />
-          </div>
-        </Section>
-        <Section classNameS="sm:pt-24 px-4">
+        <Section classNameS="sm:pt-48 pt-12 px-4">
           <div className="absolute left-0 w-[96px] h-[296px] bg-[#edbe32] blur-[180px]"></div>
           <div className="flex flex-col gap-20 items-center">
             <div className="max-w-5xl sm:grid sm:grid-cols-2 flex flex-col items-start gap-12 z-50">
