@@ -4,7 +4,7 @@ export default function Button({ children, href, open, setOpen }: { children: Re
 
     if (href) {
         return (
-            <a href="#inscricao" className="w-full bg-[#44a226] rounded-lg py-4 w-[90%] text-white font-semibold text-center text-xl">
+            <a href={href} className="w-full bg-[#44a226] rounded-lg py-4 w-[90%] text-white font-semibold text-center text-xl">
                 {children}
             </a>
         )
