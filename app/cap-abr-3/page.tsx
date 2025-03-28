@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <>
       <Header
-        title={<>A Reforma Tributária nivelou o jogo – e quem se preparar primeiro, chega ao topo mais rápido.</>}
+        title={<>A Reforma Tributária nivelou o jogo – e <span className="text-[#edbe32]">quem se preparar primeiro</span>, chega ao topo mais rápido.</>}
         description={<>No dia 09 de abril, eu mostrarei a você as habilidades que te farão crescer como nunca em sua carreira tributária, enquanto o mercado se adapta.</>}
         list={[]}
         btn_text="QUERO ACERTAR NA CONTRATAÇÃO"
@@ -20,6 +20,14 @@ export default function Page() {
         <div className="absolute -top-24 w-full h-72 sm:block hidden">
           <Image
             src="/images/section.png"
+            alt="Divisória"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+        <div className="absolute -top-44 w-full h-72 sm:hidden block">
+          <Image
+            src="/images/section2.png"
             alt="Divisória"
             layout="fill"
             objectFit="contain"
@@ -69,7 +77,7 @@ export default function Page() {
                 layout="fill"
               />
             </div>
-            <div className="flex flex-col gap-4 text-white z-50 sm:mt-0 -mt-12">
+            <div className="flex flex-col gap-4 text-white z-50 sm:mt-0 -mt-12 sm:pe-16">
               <h2 className="text-3xl sm:text-4xl font-bold">Muito prazer! <br />Meu nome é Altair Toledo</h2>
               <p className="font-thin text-lg">Sócio da KPMG com mais de 25 anos de experiência na área tributária. Durante sua trajetória, ajudou profissionais e empresas a se posicionarem estrategicamente para crescer de forma acelerada. Agora, ele vai revelar em primeira mão o Plano JK, um método exclusivo para você transformar sua carreira em tempo recorde.</p>
               <p className="font-thin text-lg">Clique no botão abaixo, faça sua inscrição e venha descobrir como crescer 20 anos em 2!</p>

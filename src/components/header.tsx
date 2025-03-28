@@ -11,7 +11,7 @@ interface FormProps {
 
 export function Header({ description, title, list, badge }: FormProps) {
     return (
-        <header className="relative bg-black h-[1164px] sm:h-screen w-full flex items-start sm:items-center justify-center sm:px-4 py-8 sm:py-12 overflow-hidden">
+        <header className="relative bg-black h-[1100px] sm:h-screen w-full flex items-start sm:items-center justify-center sm:px-4 py-8 sm:py-12 overflow-hidden">
             <div className="absolute bottom-0 w-full h-24 bg-gradient-to-b from-transparent to-black"></div>
             <div className="absolute right-0 top-0 bg-[#edbe32] w-[64px] h-[224px] blur-[100px] block sm:hidden"></div>
             <Image
@@ -25,9 +25,9 @@ export function Header({ description, title, list, badge }: FormProps) {
                 <p className="w-[80%] text-center">{badge}</p>
             </div>
             {/* <div className="sm:hidden absolute top-0 w-full h-full bg-black/60"></div> */}
-            <div className="w-full sm:max-w-6xl sm:grid sm:grid-cols-5 gap-12 sm:gap-12 flex flex-col z-50 sm:pt-0 -translate-y-12  pt-20">
+            <div className="w-full sm:max-w-6xl sm:grid sm:grid-cols-5 gap-12 sm:gap-12 flex flex-col z-50 sm:pt-0 -translate-y-8 pt-20">
                 <div id="forms" className="text-white col-span-3 text-text1 flex flex-col gap-3 sm:gap-6 justify-start items-start sm:items-start sm:justify-start sm:text-left px-4 sm:px-0">
-                    <div className="relative sm:w-[200px] sm:h-[200px] w-[156px] h-[156px]">
+                    <div className="relative sm:w-[200px] sm:h-[200px] w-[156px] h-[156px] sm:translate-y-4">
                         <Image
                             src="/images/logo.png"
                             alt=""
@@ -35,7 +35,7 @@ export function Header({ description, title, list, badge }: FormProps) {
                             objectFit="contain"
                         />
                     </div>
-                    <div className="flex flex-col items-start gap-2">
+                    <div className="flex flex-col items-start gap-6">
                         <p className="border px-4 py-2 rounded-full text-sm hidden sm:block">{badge}</p>
                         <h1 className="playfair text-3xl sm:text-[40px] sm:leading-[48px] font-bold">{title}</h1>
                         <p className="text-lg sm:text-xl max-w-lg font-thin">{description}</p>
