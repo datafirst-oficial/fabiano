@@ -14,6 +14,7 @@ export default function Pattern({ open, setOpen }: { open: boolean, setOpen: Rea
                         alt="Divisória"
                         layout="fill"
                         objectFit="contain"
+                        loading="lazy"
                     />
                 </div>
             </div>
@@ -24,6 +25,7 @@ export default function Pattern({ open, setOpen }: { open: boolean, setOpen: Rea
                         alt="Divisória"
                         layout="fill"
                         objectFit="contain"
+                        loading="lazy"
                     />
                 </div>
                 <Section classNameS="sm:pt-48 pt-12 px-4">
@@ -68,6 +70,7 @@ export default function Pattern({ open, setOpen }: { open: boolean, setOpen: Rea
                                 alt="Altair Toledo"
                                 objectFit="contain"
                                 layout="fill"
+                                loading="lazy"
                             />
                         </div>
                         <div className="flex flex-col gap-4 text-white z-50 sm:mt-0 -mt-12 sm:pe-16">

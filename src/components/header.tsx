@@ -23,6 +23,7 @@ export function Header({ description, title, list, badge, open, setOpen }: FormP
                 alt=""
                 objectFit="cover"
                 className="hidden sm:block"
+                loading="eager"
             />
             <div className="absolute top-0 left-0 w-full bg-zinc-900 text-white py-2 flex justify-center text-sm block sm:hidden border-b border-white/10">
                 <p className="w-[80%] text-center">{badge}</p>
@@ -36,6 +37,7 @@ export function Header({ description, title, list, badge, open, setOpen }: FormP
                             alt=""
                             layout="fill"
                             objectFit="contain"
+                            loading="eager"
                         />
                     </div>
                     <div className="flex flex-col items-start gap-6">
@@ -80,6 +82,7 @@ export function Header({ description, title, list, badge, open, setOpen }: FormP
                     alt=""
                     objectFit="cover"
                     className=""
+                    loading="lazy"
                 />
             </div>
         </header>
