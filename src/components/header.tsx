@@ -73,15 +73,15 @@ export function Header({ description, title, list, badge, open, setOpen }: FormP
                     </div>
                 </div>
             </div>
-            <Image
-                src="/images/bg1-sm.webp"
-                layout="responsive"
-                width={`450`}
-                height={`450`}
-                alt=""
-                objectFit="contain"
-                className="absolute bottom-0 w-full sm:hidden block"
-            />
+            <div className="w-full h-[750px] absolute bottom-0 w-full sm:hidden block">
+                <Image
+                    src="/images/bg1-sm.webp"
+                    layout="fill"
+                    alt=""
+                    objectFit="cover"
+                    className=""
+                />
+            </div>
         </header>
     )
 }
