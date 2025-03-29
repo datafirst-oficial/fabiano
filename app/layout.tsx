@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Playfair_Display, Inter } from 'next/font/google'
 
-const playfair_display = Playfair_Display({ weight: ['400', '500', '600', '700'], subsets: ['latin'] })
+const playfair_display = Playfair_Display({ 
+  weight: ['400', '500', '600', '700'], 
+  subsets: ['latin'],
+  variable: '--font-playfair-display', // <- Aqui está a mágica
+})
 const inter = Inter({ weight: ['300', '400', '500', '600', '700'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -16,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang="pt">
       <head>
         <script dangerouslySetInnerHTML={{
           __html: `
@@ -28,7 +32,7 @@ export default function RootLayout({
         `}} />
       </head>
       <body
-        className={`${playfair_display.className, inter.className }`}
+        className={`${playfair_display.variable} ${inter.className}`}
       >
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKF2T6WV"
           height="0" width="0"></iframe></noscript>
