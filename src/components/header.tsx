@@ -18,7 +18,7 @@ export function Header({ description, title, list, badge, open, setOpen }: FormP
             <div className="absolute bottom-0 w-full h-24 bg-gradient-to-b from-transparent to-black"></div>
             <div className="absolute right-0 top-0 bg-[#edbe32] w-[64px] h-[224px] blur-[100px] block sm:hidden"></div>
             <Image
-                src="/images/bg1.png"
+                src="/images/bg1.webp"
                 layout="fill"
                 alt=""
                 objectFit="cover"
@@ -32,7 +32,7 @@ export function Header({ description, title, list, badge, open, setOpen }: FormP
                 <div id="forms" className="text-white col-span-3 text-text1 flex flex-col gap-3 sm:gap-6 justify-start items-start sm:items-start sm:justify-start sm:text-left px-4 sm:px-0">
                     <div className="relative sm:w-[200px] sm:h-[200px] w-[156px] h-[156px] sm:translate-y-4">
                         <Image
-                            src="/images/logo.png"
+                            src="/images/logo.webp"
                             alt=""
                             layout="fill"
                             objectFit="contain"
@@ -74,7 +74,7 @@ export function Header({ description, title, list, badge, open, setOpen }: FormP
                 </div>
             </div>
             <Image
-                src="/images/bg1-sm.png"
+                src="/images/bg1-sm.webp"
                 layout="responsive"
                 width={`450`}
                 height={`450`}
