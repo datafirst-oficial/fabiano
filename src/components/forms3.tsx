@@ -261,7 +261,7 @@ export function Form3() {
                             return (
                                 <input
                                     key={index}
-                                    // @ts-ignore
+                                    // @ts-expect-error
                                     value={data[field.name]}
                                     maxLength={field.name === 'cellphone' ? 15 : undefined}
                                     minLength={field.name === 'cellphone' ? 15 : undefined}
@@ -274,7 +274,7 @@ export function Form3() {
                         } else {
                             return (
                                 <Select
-                                    // @ts-ignore
+                                    // @ts-expect-error
                                     value={data[field.name]}
                                     label={labels[index]}
                                     onChange={(e: ChangeEvent<HTMLSelectElement>) => handleChange(e, field.name as keyof typeof initialData)}
@@ -315,7 +315,7 @@ export function Form3() {
                         <button
                             onClick={() => {
 
-                                // @ts-ignore
+                                // @ts-expect-error
                                 if (data[fields[steps].name].includes('?')) {
                                     setError('Preencha o campo acima corretamente')
                                 } else {
