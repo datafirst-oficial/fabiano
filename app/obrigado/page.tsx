@@ -10,7 +10,7 @@ export default function Page() {
                 <div className="flex flex-col items-center gap-6">
                     <div className="relative sm:w-[200px] sm:h-[200px] w-[156px] h-[156px] sm:translate-y-4">
                         <Image
-                            src="/images/logo.png"
+                            src="/images/logo.webp"
                             alt=""
                             layout="fill"
                             objectFit="contain"
