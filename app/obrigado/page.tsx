@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Page() {
     return (
-        <div className="relative min-h-screen flex items-center justify-center radial px-4 sm:py-0 py-12">
+        <div className="relative min-h-screen flex items-center justify-center radial px-4 py-12">
             <div className="absolute left-0 w-[96px] h-[296px] bg-[#edbe32] blur-[180px]"></div>
             <div className="flex flex-col items-center justify-center gap-8 text-center">
                 <div className="flex flex-col items-center gap-6">
