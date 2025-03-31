@@ -6,7 +6,7 @@ const playfair_display = Playfair_Display({
   weight: ['400', '500', '600', '700'], 
   subsets: ['latin'],
   variable: '--font-playfair-display', // <- Aqui está a mágica
-})
+}) 
 const inter = Inter({ weight: ['300', '400', '500', '600', '700'], subsets: ['latin'] }) 
 
 export const metadata: Metadata = { 
