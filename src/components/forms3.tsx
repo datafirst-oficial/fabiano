@@ -1,9 +1,10 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { ChangeEvent, FormEvent, useMemo, useState } from "react";
+import { ChangeEvent, useMemo, useState } from "react";
 
 function Select({ label, onChange, options, placeholder, value }: { onChange: (e: ChangeEvent<HTMLSelectElement>) => void, placeholder: string, label: string, options: string[], value: string }) {
+
+    console.log(placeholder)
 
     return (
         <select
@@ -259,6 +260,7 @@ export function Form3() {
                         } else if (field.type === 'text') {
                             return (
                                 <input
+                                    key={index}
                                     // @ts-ignore
                                     value={data[field.name]}
                                     maxLength={field.name === 'cellphone' ? 15 : undefined}
