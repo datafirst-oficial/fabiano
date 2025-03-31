@@ -9,7 +9,7 @@ const playfair_display = Playfair_Display({
 })
 const inter = Inter({ weight: ['300', '400', '500', '600', '700'], subsets: ['latin'] })
 
-export const metadata: Metadata = {
+export const metadata: Metadata = { 
   title: "Plano JK | Altair Toledo",
   description: "10 Anos de Crescimento em 2",
 };
