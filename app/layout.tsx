@@ -3,7 +3,7 @@ import "./globals.css";
 import { Playfair_Display, Inter } from 'next/font/google'
 
 const playfair_display = Playfair_Display({ 
-  weight: ['400', '500', '600', '700'], 
+  weight: ['400', '500', '600', '700'],  
   subsets: ['latin'],
   variable: '--font-playfair-display', // <- Aqui está a mágica
 }) 
