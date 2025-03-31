@@ -262,6 +262,7 @@ export function Form3() {
                                 <input
                                     key={index}
                                     // @ts-expect-error
+                                    // @typescript-eslint/ban-ts-comment dadsd
                                     value={data[field.name]}
                                     maxLength={field.name === 'cellphone' ? 15 : undefined}
                                     minLength={field.name === 'cellphone' ? 15 : undefined}
@@ -274,7 +275,9 @@ export function Form3() {
                         } else {
                             return (
                                 <Select
+                                    key={index}
                                     // @ts-expect-error
+                                    // @typescript-eslint/ban-ts-comment dadsd
                                     value={data[field.name]}
                                     label={labels[index]}
                                     onChange={(e: ChangeEvent<HTMLSelectElement>) => handleChange(e, field.name as keyof typeof initialData)}
@@ -316,6 +319,7 @@ export function Form3() {
                             onClick={() => {
 
                                 // @ts-expect-error
+                                // @typescript-eslint/ban-ts-comment dadsd
                                 if (data[fields[steps].name].includes('?')) {
                                     setError('Preencha o campo acima corretamente')
                                 } else {
