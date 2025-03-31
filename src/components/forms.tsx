@@ -83,7 +83,7 @@ export default function Forms({ setOpen, open }: FormsType) {
                 }),
             });
 
-            push('/obrigado')
+            push(`/obrigado?email=${data.email}`)
             setIsSubmiting(false)
             setData({ name: '', email: '', phone: '' });
         } catch (e) {

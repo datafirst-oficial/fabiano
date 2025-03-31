@@ -46,6 +46,9 @@
 .linear-4 {
   background: linear-gradient(135deg, #f7f7f7 44%, #e5e5e5 93%);
 }
+.radial {
+  background: radial-gradient(circle, #222 0%, #131313 100%);
+}
 
 .swiper {
   width: 100%;
