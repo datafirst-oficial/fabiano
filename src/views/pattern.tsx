@@ -5,7 +5,7 @@ import { SetStateAction } from "react";
 import { SimpleCard } from "../components/cards";
 
 export default function Pattern({ open, setOpen }: { open: boolean, setOpen: React.Dispatch<SetStateAction<boolean>> }) {
-    return (
+    return ( 
         <>
             <div className="relative h-24 -translate-y-24 w-full sm:hidden block z-[9999] bg-black">
                 <div className="absolute -top-24 w-full h-72 z-[9999]">
