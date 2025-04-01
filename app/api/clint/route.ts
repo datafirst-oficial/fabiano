@@ -27,13 +27,14 @@ export async function POST(request: Request) {
             })
         });
 
-        await fetch(`https://api.manychat.com/fb/subscriber/createSubscriber`, {
+        await fetch(`https://hook.us2.make.com/o507sqee52a1z2sb9jax9nmfl6awkkvi`, {
             method: 'POST',
             headers: {
                 "Authorization": "Bearer 2668943:46a53778646398e717d5d07ca6252f09",
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
+                email,
                 first_name: name.split(' ')[0],
                 last_name: name.split(' ')[name.split(' ').length - 1],
                 phone: Number(`55${phone.replace('(', '').replace(')', '').replace(' ', '').replace('-', '')}`),
