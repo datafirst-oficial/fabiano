@@ -2,7 +2,7 @@ import Image from "next/image";
 import Button from "../components/button";
 import Section from "../components/section";
 import { SetStateAction } from "react";
-import { CardItem4, SimpleCard } from "../components/cards";
+import { SimpleCard } from "../components/cards";
 
 export default function Pattern({ open, setOpen }: { open: boolean, setOpen: React.Dispatch<SetStateAction<boolean>> }) {
     return (
