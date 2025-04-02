@@ -123,19 +123,19 @@ export default function Forms({ setOpen, open }: FormsType) {
                             <label htmlFor="renda" className="font-semibold">Digite seu WhatsApp:</label>
                             <div className="border rounded-2xl p-6">
                                 <div className="flex gap-2">
-                                    <input type="radio" onChange={(e) => onChange({ type: 'renda', value: 'R$ 1.000 até R$ 5.000,00;' })} name="renda" id="renda_01" />
+                                    <input type="radio" onChange={() => onChange({ type: 'renda', value: 'R$ 1.000 até R$ 5.000,00;' })} name="renda" id="renda_01" />
                                     <label htmlFor="renda_01" className="">R$ 1.000 até R$ 5.000,00;</label>
                                 </div>
                                 <div className="flex gap-2">
-                                    <input type="radio" onChange={(e) => onChange({ type: 'renda', value: 'R$ 5.001,00 até R$ 10.000,00;' })} name="renda" id="renda_02" />
+                                    <input type="radio" onChange={() => onChange({ type: 'renda', value: 'R$ 5.001,00 até R$ 10.000,00;' })} name="renda" id="renda_02" />
                                     <label htmlFor="renda_02" className="">R$ 5.001,00 até R$ 10.000,00;</label>
                                 </div>
                                 <div className="flex gap-2">
-                                    <input type="radio" onChange={(e) => onChange({ type: 'renda', value: 'R$ 10.001,00 até R$ 20.000,00;' })} name="renda" id="renda_03" />
+                                    <input type="radio" onChange={() => onChange({ type: 'renda', value: 'R$ 10.001,00 até R$ 20.000,00;' })} name="renda" id="renda_03" />
                                     <label htmlFor="renda_03" className="">R$ 10.001,00 até R$ 20.000,00;</label>
                                 </div>
                                 <div className="flex gap-2">
-                                    <input type="radio" onChange={(e) => onChange({ type: 'renda', value: 'Acima de R$ 20.000,00.' })} name="renda" id="renda_04" />
+                                    <input type="radio" onChange={() => onChange({ type: 'renda', value: 'Acima de R$ 20.000,00.' })} name="renda" id="renda_04" />
                                     <label htmlFor="renda_04" className="">Acima de R$ 20.000,00.</label>
                                 </div>
                             </div>
