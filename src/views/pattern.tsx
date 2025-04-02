@@ -2,91 +2,176 @@ import Image from "next/image";
 import Button from "../components/button";
 import Section from "../components/section";
 import { SetStateAction } from "react";
-import { SimpleCard } from "../components/cards";
+import { CardItem4, SimpleCard } from "../components/cards";
 
 export default function Pattern({ open, setOpen }: { open: boolean, setOpen: React.Dispatch<SetStateAction<boolean>> }) {
-    return ( 
+    return (
         <>
-            <div className="relative h-24 -translate-y-24 w-full sm:hidden block z-[9999] bg-black">
-                <div className="absolute -top-24 w-full h-72 z-[9999]">
-                    <Image
-                        src="/images/section2.webp"
-                        alt="Divisória"
-                        layout="fill"
-                        objectFit="contain"
-                        loading="lazy"
-                    />
-                </div>
-            </div>
             <main className="relative bg-black z-50">
-                <div className="absolute -top-24 w-full h-72 sm:block hidden">
-                    <Image
-                        src="/images/section.webp"
-                        alt="Divisória"
-                        layout="fill"
-                        objectFit="contain"
-                        loading="lazy"
-                    />
-                </div>
-                <Section classNameS="sm:pt-48 pt-12 px-4">
-                    <div className="absolute left-0 w-[96px] h-[296px] bg-[#edbe32] blur-[180px]"></div>
+                <Section classNameS="bg-zinc-950 sm:py-24 py-12 px-4">
+                    {/* <div className="absolute left-0 w-[96px] h-[296px] bg-[#edbe32] blur-[180px]"></div> */}
                     <div className="flex flex-col gap-20 items-center">
                         <div className="max-w-5xl sm:grid sm:grid-cols-2 flex flex-col items-start gap-12 z-50">
-                            <div className="flex flex-col gap-4 text-left text-white">
-                                <h3 className="text-4xl sm:text-6xl font-semibold">Para quem é esta <span className="text-[#edbe32]">Super Live</span>?</h3>
-                                <p className="text-2xl">Se você atua na área tributária e busca crescimento acelerado, este evento é para você:</p>
+                            <div className="flex flex-col gap-4 sm:gap-16 text-left text-white">
+                                <h3 className="text-3xl sm:text-4xl sm:text-6xl font-semibold">Com o <span className="text-[#ffde7c]">Planejamento Previdenciário</span> você irá:</h3>
+                                <div className="flex flex-col gap-4">
+                                    <p className="opacity-80 text-lg underline">Tenha acesso ao planejamento <br />previdenciário por um especialista:</p>
+                                    <div className="max-w-sm sm:block hidden">
+                                        <Button
+                                            open={open}
+                                            setOpen={setOpen}
+                                        >Agendar consulta de <br />planejamento previdenciário</Button>
+                                    </div>
+                                </div>
                             </div>
                             <div className="flex flex-col gap-8">
                                 <SimpleCard
-                                    title="Analistas, consultores e gestores"
-                                    subtitle="que querem se destacar e conquistar as melhores oportunidades."
+                                    imagePath="money"
+                                    title="Aposentar com um valor digno condizente ao seu padrão de vida"
+                                    subtitle="Aumentando a sua aposentadoria em 3x, você conseguirá ter uma vida mais leve e com menos preocupações com o seu trabalho."
                                 />
                                 <SimpleCard
-                                    title="Advogados tributaristas"
-                                    subtitle="que precisam ir além do conhecimento técnico para crescer na área."
+                                    imagePath="person"
+                                    title="Alívio emocional"
+                                    subtitle="Você pode deixar de lado as preocupações com o que deve pagar. Você terá clareza: um carnê do quanto deve pagar, com a certeza do quanto irá se aposentar."
                                 />
                                 <SimpleCard
-                                    title="Empreededores e contadores"
-                                    subtitle="que desejam estratégias para aumentar sua autoridade e valor de mercado."
+                                    imagePath="rocket"
+                                    title="Criar novas perspectivas"
+                                    subtitle="Com a sua aposentadoria nas mãos de especialistas, você poderá focar ainda mais em mais ganhos, com a segurança de uma renda após o término dos trabalhos."
                                 />
                             </div>
-                        </div>
-                    </div>
-                </Section>
-                <section className="flex flex-col items-center py-12 sm:py-24 gap-4">
-                    <p className="border border-[#edbe32]/10 px-4 sm:px-8 py-4 sm:rounded-full uppercase text-center sm:text-2xl text-white font-bold sm:my-shadow bg-zinc-900">Se você quer <span className="text-[#edbe32]">se tornar referência</span> no setor, este é o momento.</p>
-                    <div>
-                        <Button
-                            open={open}
-                            setOpen={setOpen}
-                        >Inscreva-se</Button>
-                    </div>
-                </section>
-                <Section classNameS="pb-8 px-4 sm:mt-0 -mt-16">
-                    <div className="sm:grid sm:grid-cols-2 items-center gap-24 z-50">
-                        <div className="relative xl:w-[768px] xl:h-[768px] sm:w-[656px] sm:h-[656px] w-full h-96">
-                            <Image
-                                src="/images/toledo.webp"
-                                alt="Altair Toledo"
-                                objectFit="contain"
-                                layout="fill"
-                                loading="lazy"
-                            />
-                        </div>
-                        <div className="flex flex-col gap-4 text-white z-50 sm:mt-0 -mt-12 sm:pe-16">
-                            <h2 className="text-3xl sm:text-4xl font-bold">Muito prazer! <br />Meu nome é Altair Toledo</h2>
-                            <p className="font-thin text-lg">Sócio da KPMG com mais de 25 anos de experiência na área tributária. Durante sua trajetória, ajudou profissionais e empresas a se posicionarem estrategicamente para crescer de forma acelerada. Agora, ele vai revelar em primeira mão o Plano JK, um método exclusivo para você transformar sua carreira em tempo recorde.</p>
-                            <p className="font-thin text-lg">Clique no botão abaixo, faça sua inscrição e venha descobrir como crescer 20 anos em 2!</p>
-                            <div className="flex w-full sm:max-w-sm">
+                            <div className="max-w-sm sm:hidden block">
                                 <Button
                                     open={open}
                                     setOpen={setOpen}
-                                >Inscreva-se</Button>
+                                >Agendar consulta de <br className="sm:block hidden" />planejamento previdenciário</Button>
                             </div>
                         </div>
                     </div>
                 </Section>
-            </main>
+                <Section classNameS="relative sm:py-24 py-12 px-4 border-y-4 border-white/20">
+                    <div className="absolute left-0 bottom-0 sm:w-[524px] sm:h-[524px]">
+                        <Image
+                            src="/images/thinking.png"
+                            alt="Imagem de pessoa pensando"
+                            layout="fill"
+                            objectFit="contain"
+                        />
+                    </div>
+                    {/* <div className="absolute left-0 w-[96px] h-[296px] bg-[#edbe32] blur-[180px]"></div> */}
+                    <div className="flex flex-col gap-20 items-center">
+                        <div className="max-w-5xl sm:grid sm:grid-cols-2 flex flex-col items-start gap-4 sm:gap-12 z-50">
+                            <div className="flex flex-col gap-4 sm:gap-16 text-left text-white">
+                                <h3 className="text-3xl sm:text-5xl font-semibold text-white"><span className="text-[#ffde7c]">Para quem é</span> o Planejamento Previdenciário?</h3>
+                                <div className="flex flex-col gap-4">
+                                    {/* <p className="opacity-80 text-lg underline">Tenha acesso ao planejamento <br />previdenciário por um especialista:</p> */}
+                                    <div className="max-w-sm sm:block hidden">
+                                        <Button
+                                            open={open}
+                                            setOpen={setOpen}
+                                        >Solicitar planejamento previdenciário</Button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="flex flex-col gap-8">
+                                <SimpleCard
+                                    title="Pessoas que possuem renda acima de 10 mil reais/mês"
+                                />
+                                <SimpleCard
+                                    title="Pessoas que estão com uma idade suficiente para fazer o planejamento"
+                                />
+                                <SimpleCard
+                                    title="Pessoas que ainda não deram entrada no INSS"
+                                />
+                                <SimpleCard
+                                    title="Pessoas que querem antecipar e planejar a aposentadoria"
+                                />
+                            </div>
+                            <div className="max-w-sm sm:hidden block">
+                                <Button
+                                    open={open}
+                                    setOpen={setOpen}
+                                >Agendar consulta de <br className="sm:block hidden" />planejamento previdenciário</Button>
+                            </div>
+                        </div>
+                    </div>
+                </Section>
+                <section className="relative sm:py-24 py-12 bg-zinc-950 px-4">
+                    <div className="flex flex-col items-center gap-4 sm:gap-12">
+                        <div className="flex flex-col sm:items-center gap-2 text-center">
+                            <h2 className="text-3xl sm:text-5xl font-semibold text-white">O que dizem sobre o nosso escritório</h2>
+                            <p className="font-thin sm:text-2xl opacity-80 text-white ">Clique e confira os depoimentos:</p>
+                        </div>
+                        <div className="w-full sm:h-96 sm:py-12 flex sm:flex-row flex-col items-center justify-center">
+                            <div className="w-full flex justify-center items-center flex-wrap gap-4 sm:gap-12 z-50">
+                                <video width="320" height="360" className="rounded-2xl" controls>
+                                    <source src="/images/1.mp4" type="video/mp4" />
+                                    Seu navegador não suporta a tag de vídeo.
+                                </video>
+                                <video width="320" height="280" className="rounded-xl" controls>
+                                    <source src="/images/2.mp4" type="video/mp4" />
+                                    Seu navegador não suporta a tag de vídeo.
+                                </video>
+                                <video width="320" height="360" className="rounded-2xl" controls>
+                                    <source src="/images/3.mp4" type="video/mp4" />
+                                    Seu navegador não suporta a tag de vídeo.
+                                </video>
+                            </div>
+                            <div className="absolute h-64 w-full items-center justify-center radial-2 sm:block hidden"></div>
+                        </div>
+                        <div className="max-w-md z-50">
+                            <Button
+                                open={open}
+                                setOpen={setOpen}
+                            >Solicitar planejamento previdenciário</Button>
+                        </div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-zinc-950 to-black"></div>
+                </section>
+                <Section classNameS="relative sm:py-24 pb-12 pt-4">
+                    <div className="absolute bottom-0 right-0 w-64 h-32 bg-[#ffde7c] blur-[200px] sm:block hidden"></div>
+                    <div className="absolute top-48 left-0 w-64 h-32 bg-[#ffde7c] blur-[200px] sm:block hidden"></div>
+                    <div className="flex flex-col gap-20 items-center px-4">
+                        <div className="max-w-5xl sm:grid sm:grid-cols-3 sm:gap-24 flex flex-col items-start gap-8 z-50">
+                            <div className="flex flex-col-reverse sm:flex-col sm:items-end gap-4 sm:gap-24 text-left text-white">
+                                <h3 className="text-4xl sm:text-6xl font-semibold sm:text-right">Quem <br className="hidden sm:block" />somos?</h3>
+                                {/* <div className="flex flex-col items-end gap-4"> */}
+                                <div className="relative w-[200px] h-[200px]">
+                                    <Image
+                                        src="/images/main-logo.png"
+                                        alt=""
+                                        layout="fill"
+                                        objectFit="contain"
+                                    />
+                                </div>
+                                {/* <p className="opacity-80 text-lg underline">Tenha acesso ao planejamento <br />previdenciário por um especialista:</p> */}
+                                <div className="max-w-sm hidden sm:block">
+                                    <Button
+                                        open={open}
+                                        setOpen={setOpen}
+                                    >Solicitar planejamento previdenciário</Button>
+                                </div>
+                                {/* </div> */}
+                            </div>
+                            <div className="col-span-2 flex flex-col gap-4 sm:gap-8 text-white/80 text-lg">
+                                <p className="">Nosso escritório possui <span className="text-[#ffde7c] font-bold">18 anos de história</span>.<br />Fundado em 2006 pelo advogado José Fabiano Lopes Lino de Oliveira, somos um escritório de Advogados Associados liderado pelo nosso CEO.</p>
+                                <p className="">Com uma vasta experiência, acumulamos <span className="text-[#ffde7c] font-bold">mais de 5.000 processos que estão em andamento atualmente</span>.</p>
+                                <p className="">Durante nossos 18 anos de dedicação, <span className="text-[#ffde7c] font-bold">mais de 20 mil pessoas já foram atendidas pessoalmente em nossa sede</span> em Petrolândia (PE).</p>
+                                <p className="">Nossa marca se destaca pelo nosso propósito firme e pelo compromisso inabalável em oferecer a melhor solução jurídica de maneira personalizada para cada cliente.</p>
+                                <p className="">Nosso serviço é marcado pela combinação de <span className="text-white font-bold">expertise técnica</span> e uma <span className="text-white font-bold">abordagem humanizada</span>, onde cada caso é tratado com a máxima atenção, pois <span className="text-[#ffde7c] font-bold">compreendemos que estamos lidando com histórias de vida</span>.</p>
+                                <p className="">Nosso maior orgulho está em transformar o destino de famílias, garantindo benefícios previdenciários essenciais para nossos clientes. Por isso, deixamos uma marca positiva na vida de quem confia em nós.</p>
+                            </div>
+                            <div className="">
+                                <Button
+                                    open={open}
+                                    setOpen={setOpen}
+                                >Agendar consulta de planejamento previdenciário</Button>
+                            </div>
+                        </div>
+                    </div>
+                </Section>
+            </main >
         </>
     )
 }

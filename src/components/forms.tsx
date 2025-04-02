@@ -12,6 +12,7 @@ type DataType = {
     name: string,
     email: string,
     phone: string
+    renda: string
 }
 
 export default function Forms({ setOpen, open }: FormsType) {
@@ -21,7 +22,8 @@ export default function Forms({ setOpen, open }: FormsType) {
     const [data, setData] = useState<DataType>({
         name: '',
         email: '',
-        phone: ''
+        phone: '',
+        renda: ''
     })
 
     function formatPhone(phone: string): string {
@@ -85,7 +87,7 @@ export default function Forms({ setOpen, open }: FormsType) {
 
             push(`/obrigado?email=${data.email}`)
             setIsSubmiting(false)
-            setData({ name: '', email: '', phone: '' });
+            setData({ name: '', email: '', phone: '', renda: '' });
         } catch (e) {
             console.log(e)
             setIsSubmiting(false)
@@ -99,7 +101,10 @@ export default function Forms({ setOpen, open }: FormsType) {
         <div className="fixed top-0 left-0 h-full w-full z-[99999] flex items-center justify-center">
             <div className="absolute top-0 left-0 h-full w-full bg-black/60" onClick={() => setOpen(!open)}></div>
             <form onSubmit={(e) => formSubmit(e)} className="relative w-full sm:max-w-xl flex flex-col items-center gap-4 bg-zinc-50 rounded-xl z-50 px-4 sm:px-8 pt-8 pb-16 sm:pt-12 sm:pb-16">
-                <h2 className="max-w-3xl text-lg sm:text-2xl text-center font-bold">Coloque suas informações nas caixas abaixo e envie para confirmar sua <span className="text-orange-500">participação no Plano JK</span>.</h2>
+                <h2 className="max-w-3xl text-lg sm:text-2xl text-center font-bold">Preencha os dados e agende uma análise com nossos especialistas.</h2>
+                <div onClick={() => setOpen(!open)} className="cursor-pointer absolute right-4 top-4 fill-red-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"><path d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z" /></svg>
+                </div>
                 <div className="w-full flex flex-col gap-6">
                     <div className="w-full flex flex-col gap-4">
                         <div className="flex flex-col gap-2">
@@ -114,6 +119,28 @@ export default function Forms({ setOpen, open }: FormsType) {
                             <label htmlFor="phone" className="font-semibold">Digite seu WhatsApp:</label>
                             <input value={data.phone} maxLength={15} onChange={(e) => onChange({ type: 'phone', value: e.target.value })} name="phone" id="phone" placeholder="(11) 99999-9999" type="" className="border bg-transparent py-2 px-4 outline-none focus:border-zinc-500 rounded-xl text-zinc-800" />
                         </div>
+                        <div className="flex flex-col gap-2">
+                            <label htmlFor="renda" className="font-semibold">Digite seu WhatsApp:</label>
+                            <div className="border rounded-2xl p-6">
+                                <div className="flex gap-2">
+                                    <input type="radio" onChange={(e) => onChange({ type: 'renda', value: 'R$ 1.000 até R$ 5.000,00;' })} name="renda" id="renda_01" />
+                                    <label htmlFor="renda_01" className="">R$ 1.000 até R$ 5.000,00;</label>
+                                </div>
+                                <div className="flex gap-2">
+                                    <input type="radio" onChange={(e) => onChange({ type: 'renda', value: 'R$ 5.001,00 até R$ 10.000,00;' })} name="renda" id="renda_02" />
+                                    <label htmlFor="renda_02" className="">R$ 5.001,00 até R$ 10.000,00;</label>
+                                </div>
+                                <div className="flex gap-2">
+                                    <input type="radio" onChange={(e) => onChange({ type: 'renda', value: 'R$ 10.001,00 até R$ 20.000,00;' })} name="renda" id="renda_03" />
+                                    <label htmlFor="renda_03" className="">R$ 10.001,00 até R$ 20.000,00;</label>
+                                </div>
+                                <div className="flex gap-2">
+                                    <input type="radio" onChange={(e) => onChange({ type: 'renda', value: 'Acima de R$ 20.000,00.' })} name="renda" id="renda_04" />
+                                    <label htmlFor="renda_04" className="">Acima de R$ 20.000,00.</label>
+                                </div>
+                            </div>
+                            {/* <textarea rows={4} value={data.renda} maxLength={15} onChange={(e) => onChange({ type: 'renda', value: e.target.value })} name="renda" id="renda" placeholder="(11) 99999-9999" className="border bg-transparent py-2 px-4 outline-none focus:border-zinc-500 rounded-xl text-zinc-800" /> */}
+                        </div>
                     </div>
                     <button type="submit" className="w-full bg-[#44a226] rounded-lg py-4 w-[90%] text-white font-semibold">
                         {isSubmiting ? (
@@ -123,11 +150,11 @@ export default function Forms({ setOpen, open }: FormsType) {
                                 </div>
                             </div>
                         ) : (
-                            <span>Enviar informações e participar</span>
+                            <span>Agendar</span>
                         )}
                     </button>
                 </div>
-                <p className="absolute max-w-xs bottom-5 text-center text-xs text-zinc-400">Ao clicar no botão acima, concordo em receber comunicados via WhatsApp e Email.</p>
+                <p className="absolute max-w-xs bottom-5 text-center text-xs text-zinc-400">⚠️ As vagas para a consultoria são limitadas e podem encerrar a qualquer momento.</p>
             </form>
         </div>
     )

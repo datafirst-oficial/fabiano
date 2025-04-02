@@ -11,7 +11,7 @@ export default function Button({ children, href, open, setOpen, classNames }: { 
     }
 
     return (
-        <button onClick={() => setOpen && setOpen(!open)} className="w-full bg-[#44a226] rounded-lg py-4 px-24 w-[90%] text-white font-semibold text-center text-xl">
+        <button onClick={() => setOpen && setOpen(!open)} className="w-full bg-[#44a226] rounded-2xl py-4 sm:px-4 px-4 sm:px-24 w-[90%] text-white font-semibold text-center text-xl">
             {children}
         </button>
     )

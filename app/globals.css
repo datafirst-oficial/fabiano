@@ -49,6 +49,14 @@
 .radial {
   background: radial-gradient(circle, #222 0%, #131313 100%);
 }
+.radial-2 {
+  background: radial-gradient(
+    circle at 50% 50%,  /* centro do gradiente */
+    #2b2ab6 0%,         /* cor inicial */
+    #060829 50%,        /* cor intermediária */
+    #060829 100%        /* cor final */
+  );
+}
 
 .swiper {
   width: 100%;
