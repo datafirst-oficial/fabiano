@@ -66,7 +66,7 @@ export function SimpleCard({ title, subtitle, imagePath }: { title: string, subt
             }
             <div className="flex flex-col text-white">
                 <h4 className="text-white font-semibold text-lg sm:text-2xl">{title}</h4>
-                <p className="font-thin text-lg opacity-80">{subtitle}</p>
+                <p className="font-thin text-lg opacity-90">{subtitle}</p>
             </div>
         </div >
     )

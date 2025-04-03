@@ -14,24 +14,25 @@ interface FormProps {
 
 export function Header({ description, title, list, badge, open, setOpen }: FormProps) {
     return (
-        <header className="relative bg-black h-[1400px] sm:h-screen w-full flex items-start sm:items-center justify-center sm:px-4 py-8 sm:py-12 overflow-hidden">
-            <div className="absolute bottom-0 w-full h-24 bg-gradient-to-b from-transparent to-black"></div>
+        <header className="relative bg-black h-[700px] sm:h-screen w-full flex items-start sm:items-center justify-center sm:px-4 py-8 sm:py-12 overflow-hidden">
+            <div className="absolute bottom-0 w-full h-24 bg-gradient-to-b from-transparent to-zinc-950 z-50"></div>
+            <div className="absolute bottom-0 w-full h-full bg-black/40 z-50 sm:hidden"></div>
             <div className="absolute right-0 top-0 bg-[#edbe32] w-[64px] h-[224px] blur-[100px] block sm:hidden"></div>
             <Image
                 src="/images/bg1.png"
                 layout="fill"
                 alt=""
                 objectFit="cover"
-                className="hidden sm:block"
+                className="hisdden sm:block"
                 loading="eager"
             />
-            <div className="absolute top-0 left-0 w-full bg-zinc-900 text-white py-2 flex justify-center text-sm block sm:hidden border-b border-white/10">
+            <div className="z-50 absolute top-0 left-0 w-full bg-gradient-to-b to-red-900 from-red-700 text-white py-4 flex justify-center sm:text-xl font-semibold block">
                 <p className="w-[80%] text-center">{badge}</p>
             </div>
             <div className="absolute top-0 left-0 w-64 h-32 bg-[#ffde7c] blur-[200px]"></div>
-            <div className="w-full sm:max-w-6xl sm:grid sm:grid-cols-5 gap-12 sm:gap-12 flex flex-col z-50 sm:pt-0 -translate-y-8 pt-20">
-                <div id="forms" className="text-white col-span-3 text-text1 flex flex-col gap-3 sm:gap-6 justify-start items-start sm:items-start sm:justify-start sm:text-left px-4 sm:px-0">
-                    <div className="relative sm:w-[200px] sm:h-[88px] w-[200px] h-[88px] sm:translate-y-4">
+            <div className="w-full sm:max-w-6xl flex flex-col items-center gap-12 sm:gap-12 flex flex-col z-50 sm:pt-0 sm:-translate-y-8 pt-24">
+                <div id="forms" className="text-white col-span-3 text-text1 flex flex-col gap-3 sm:gap-6 justify-start items-start sm:items-center sm:justify-start sm:text-left px-4 sm:px-0">
+                    <div className="relative sm:w-[280px] sm:h-[146px] w-[230px] h-[120px] sm:translate-y-8">
                         <Image
                             src="/images/logo.png"
                             alt=""
@@ -40,10 +41,10 @@ export function Header({ description, title, list, badge, open, setOpen }: FormP
                             loading="eager"
                         />
                     </div>
-                    <div className="flex flex-col items-start gap-6 pt-4">
-                        <p className="border px-4 py-2 rounded-full text-sm hidden sm:block">{badge}</p>
-                        <h1 className="playfaisr text-3xl sm:text-4xl font-bold">{title}</h1>
-                        <p className="text-base sm:text-xl max-w-lg font-thin opacity-80">{description}</p>
+                    <div className="max-w-5xl flex flex-col items-start sm:items-center text-left sm:text-center gap-6 sm:pt-4">
+                        {/* <p className="border px-4 py-2 rounded-full text-sm hidden sm:block">{badge}</p> */}
+                        <h1 className="playfaisr text-2xl sm:text-4xl font-bold">{title}</h1>
+                        <p className="text-base sm:text-xl font-thin">{description}</p>
                         <div className="">
                             <Button
                                 open={open}
@@ -75,7 +76,7 @@ export function Header({ description, title, list, badge, open, setOpen }: FormP
                     </div>
                 </div>
             </div>
-            <div className="w-full h-[750px] absolute bottom-0 w-full sm:hidden block">
+            {/* <div className="w-full h-[750px] absolute bottom-0 w-full sm:hidden block">
                 <Image
                     src="/images/bg1-sm.png"
                     layout="fill"
@@ -84,7 +85,7 @@ export function Header({ description, title, list, badge, open, setOpen }: FormP
                     className=""
                     loading="lazy"
                 />
-            </div>
+            </div> */}
         </header>
     )
 }
