@@ -90,9 +90,16 @@ export default function Forms({ setOpen, open }: FormsType) {
                 }),
             });
 
-            // push(`/obrigado?email=${data.email}`)
-            // setIsSubmiting(false)
-            // setData({ name: '', email: '', phone: '', renda: '' });
+            if (data.renda === 'R$ 10.001,00 até R$ 20.000,00;' || data.renda === 'Acima de R$ 20.000,00.') {
+
+                push(`/agendamento?email=${data.email}`)
+                setIsSubmiting(false)
+                setData({ name: '', email: '', phone: '', renda: '' });
+                return
+            } 
+            push(`/obrigado?email=${data.email}`)
+            setIsSubmiting(false)
+            setData({ name: '', email: '', phone: '', renda: '' });
         } catch (e) {
             console.log(e)
             setIsSubmiting(false)
