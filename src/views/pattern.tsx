@@ -7,7 +7,7 @@ import { SimpleCard } from "../components/cards";
 export default function Pattern({ open, setOpen }: { open: boolean, setOpen: React.Dispatch<SetStateAction<boolean>> }) {
     return (
         <>
-            <main className="relative bg-black z-50">
+            <main className="relative bg-black z-50"> 
                 <Section classNameS="bg-zinc-950 sm:py-24 py-12 px-4">
                     {/* <div className="absolute left-0 w-[96px] h-[296px] bg-[#edbe32] blur-[180px]"></div> */}
                     <div className="flex flex-col gap-20 items-center">
