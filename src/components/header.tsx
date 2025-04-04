@@ -18,7 +18,7 @@ export function Header({ description, title, list, badge, open, setOpen }: FormP
             <div className="absolute bottom-0 w-full h-24 bg-gradient-to-b from-transparent to-zinc-950 z-50"></div>
             <div className="absolute bottom-0 w-full h-full bg-black/40 z-50 sm:hidden"></div>
             <div className="absolute right-0 top-0 bg-[#edbe32] w-[64px] h-[224px] blur-[100px] block sm:hidden"></div>
-            <Image
+            <Image 
                 src="/images/bg1.png"
                 layout="fill"
                 alt=""

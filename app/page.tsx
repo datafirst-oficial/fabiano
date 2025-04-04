@@ -19,7 +19,7 @@ export default function Page() {
         open={open}
         setOpen={setOpen}
         title={<><span className="text-[#ffde7c]">Aposente-se com um valor até 3x maior</span> que a média dos empresários e proteja a sua aposentadoria com uma <span className="text-[#ffde7c]">estratégia de planejamento previdenciário</span>!</>}
-        description={<>Na consultoria de planejamento previdenciário do nosso escritório, você receberá com clareza do quanto deve pagar para se aposentar com um valor digno e suficiente para o seu padrão de vida.</>}
+        description={<>Na consultoria de planejamento previdenciário do nosso escritório, você receberá informações claras sobre quanto deve pagar para se aposentar com um valor digno e suficiente para o seu padrão de vida.</>}
         list={[]}
         btn_text="QUERO ACERTAR NA CONTRATAÇÃO"
         badge="Exclusivo para empresários de possuem renda acima de R$ 10.000,00/mês"

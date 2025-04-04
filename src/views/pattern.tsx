@@ -27,7 +27,7 @@ export default function Pattern({ open, setOpen }: { open: boolean, setOpen: Rea
                             <div className="flex flex-col gap-8">
                                 <SimpleCard
                                     imagePath="money"
-                                    title="Aposentar com um valor digno condizente ao seu padrão de vida"
+                                    title="Aposentar-se com um valor digno e condizente ao seu padrão de vida"
                                     subtitle="Aumentando a sua aposentadoria em 3x, você conseguirá ter uma vida mais leve e com menos preocupações com o seu trabalho."
                                 />
                                 <SimpleCard
@@ -156,11 +156,11 @@ export default function Pattern({ open, setOpen }: { open: boolean, setOpen: Rea
                             <div className="flex flex-col-reverse sm:flex-col sm:items-end gap-4 sm:gap-24 text-left text-white">
                             </div>
                             <div className="col-span-2 flex flex-col gap-4 sm:gap-8">
-                                <h3 className="text-4xl sm:text-6xl font-semibold sm:text-left text-white">Quem <br className="hidden sm:block" />somos?</h3>
+                                <h3 className="text-4xl sm:text-6xl font-semibold sm:text-left text-white">Quem somos?</h3>
                                 <div className="col-span-2 flex flex-col gap-2 sm:gap-8 text-white/90 text-lg">
-                                    <p className="">Nosso escritório possui <span className="text-[#ffde7c] font-bold">18 anos de história</span>.<br />Fundado em 2006 pelo advogado José Fabiano Lopes Lino de Oliveira, somos um escritório de Advogados Associados liderado pelo nosso CEO.</p>
+                                    <p className="">Nosso escritório possui <span className="text-[#ffde7c] font-bold">19 anos de história</span>.<br />Fundado em 2006 pelo advogado José Fabiano Lopes Lino de Oliveira, somos um escritório de Advogados Associados liderado pelo nosso CEO.</p>
                                     <p className="">Com uma vasta experiência, acumulamos <span className="text-[#ffde7c] font-bold">mais de 5.000 processos que estão em andamento atualmente</span>.</p>
-                                    <p className="">Durante nossos 18 anos de dedicação, <span className="text-[#ffde7c] font-bold">mais de 20 mil pessoas já foram atendidas pessoalmente em nossa sede</span> em Petrolândia (PE).</p>
+                                    <p className="">Durante nossos 19 anos de dedicação, <span className="text-[#ffde7c] font-bold">mais de 20 mil pessoas já foram atendidas pessoalmente em nossa sede</span> em Petrolândia (PE).</p>
                                     <p className="">Nossa marca se destaca pelo nosso propósito firme e pelo compromisso inabalável em oferecer a melhor solução jurídica de maneira personalizada para cada cliente.</p>
                                     <p className="">Nosso serviço é marcado pela combinação de <span className="text-white font-bold">expertise técnica</span> e uma <span className="text-white font-bold">abordagem humanizada</span>, onde cada caso é tratado com a máxima atenção, pois <span className="text-[#ffde7c] font-bold">compreendemos que estamos lidando com histórias de vida</span>.</p>
                                     <p className="">Nosso maior orgulho está em transformar o destino de famílias, garantindo benefícios previdenciários essenciais para nossos clientes. Por isso, deixamos uma marca positiva na vida de quem confia em nós.</p>

@@ -18,6 +18,7 @@ type DataType = {
 export default function Forms({ setOpen, open }: FormsType) {
 
     const { push } = useRouter()
+    const [error, setError] = useState<string>('')
     const [isSubmiting, setIsSubmiting] = useState<boolean>(false)
     const [data, setData] = useState<DataType>({
         name: '',
@@ -54,11 +55,15 @@ export default function Forms({ setOpen, open }: FormsType) {
     async function formSubmit(e: FormEvent) {
         e.preventDefault()
         setIsSubmiting(true)
+        setError('')
 
-        if (data.name.length === 0 || data.email.length === 0 || !data.email.includes('@') || data.phone.length !== 15) {
+        if (data.name.length === 0 || data.email.length === 0 || !data.email.includes('@') || data.phone.length !== 15, data.renda.length === 0) {
             setIsSubmiting(false)
+            setError('Preencha todos os campos corretamente.')
             return
         }
+
+        setError('')
 
         const utms = { utm_source: '', utm_campaign: '', utm_medium: '', utm_content: '', utm_term: '' }
         const params = new URLSearchParams(window.location.search)
@@ -70,7 +75,7 @@ export default function Forms({ setOpen, open }: FormsType) {
         utms.utm_term = params.get('utm_term') || 'nao-traqueado'
 
         try {
-            await fetch('/api/clint', {
+            await fetch('/api/kommo', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -85,9 +90,9 @@ export default function Forms({ setOpen, open }: FormsType) {
                 }),
             });
 
-            push(`/obrigado?email=${data.email}`)
-            setIsSubmiting(false)
-            setData({ name: '', email: '', phone: '', renda: '' });
+            // push(`/obrigado?email=${data.email}`)
+            // setIsSubmiting(false)
+            // setData({ name: '', email: '', phone: '', renda: '' });
         } catch (e) {
             console.log(e)
             setIsSubmiting(false)
@@ -109,15 +114,15 @@ export default function Forms({ setOpen, open }: FormsType) {
                     <div className="w-full flex flex-col gap-4">
                         <div className="flex flex-col gap-2">
                             <label htmlFor="name" className="font-semibold">Digite seu nome:</label>
-                            <input value={data.name} onChange={(e) => onChange({ type: 'name', value: e.target.value })} name="name" id="name" placeholder="Nome" type="" className="border bg-transparent py-2 px-4 outline-none focus:border-zinc-500 rounded-xl text-zinc-800" />
+                            <input required={true} value={data.name} onChange={(e) => onChange({ type: 'name', value: e.target.value })} name="name" id="name" placeholder="Nome" type="" className="border bg-transparent py-2 px-4 outline-none focus:border-zinc-500 rounded-xl text-zinc-800" />
                         </div>
                         <div className="flex flex-col gap-2">
                             <label htmlFor="email" className="font-semibold">Digite seu email:</label>
-                            <input value={data.email} onChange={(e) => onChange({ type: 'email', value: e.target.value })} name="email" id="email" placeholder="exemplo@gmail.com" type="" className="border bg-transparent py-2 px-4 outline-none focus:border-zinc-500 rounded-xl text-zinc-800" />
+                            <input required={true} value={data.email} onChange={(e) => onChange({ type: 'email', value: e.target.value })} name="email" id="email" placeholder="exemplo@gmail.com" type="" className="border bg-transparent py-2 px-4 outline-none focus:border-zinc-500 rounded-xl text-zinc-800" />
                         </div>
                         <div className="flex flex-col gap-2">
                             <label htmlFor="phone" className="font-semibold">Digite seu WhatsApp:</label>
-                            <input value={data.phone} maxLength={15} onChange={(e) => onChange({ type: 'phone', value: e.target.value })} name="phone" id="phone" placeholder="(11) 99999-9999" type="" className="border bg-transparent py-2 px-4 outline-none focus:border-zinc-500 rounded-xl text-zinc-800" />
+                            <input required={true} value={data.phone} maxLength={15} onChange={(e) => onChange({ type: 'phone', value: e.target.value })} name="phone" id="phone" placeholder="(11) 99999-9999" type="" className="border bg-transparent py-2 px-4 outline-none focus:border-zinc-500 rounded-xl text-zinc-800" />
                         </div>
                         <div className="flex flex-col gap-2">
                             <label htmlFor="renda" className="font-semibold">Digite seu WhatsApp:</label>
@@ -142,6 +147,7 @@ export default function Forms({ setOpen, open }: FormsType) {
                             {/* <textarea rows={4} value={data.renda} maxLength={15} onChange={(e) => onChange({ type: 'renda', value: e.target.value })} name="renda" id="renda" placeholder="(11) 99999-9999" className="border bg-transparent py-2 px-4 outline-none focus:border-zinc-500 rounded-xl text-zinc-800" /> */}
                         </div>
                     </div>
+                    {error && <span className="text-center text-red-500">{error}</span>}
                     <button type="submit" className="w-full bg-[#44a226] rounded-lg py-4 w-[90%] text-white font-semibold">
                         {isSubmiting ? (
                             <div className="flex-col gap-4 w-full flex items-center justify-center">
