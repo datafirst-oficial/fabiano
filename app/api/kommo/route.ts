@@ -48,31 +48,31 @@ const createContact = async ({ email, name, phone, utm_campaign, utm_content, ut
 
 };
 
-const createLead = async (contactId: string) => {
+// const createLead = async (contactId: string) => {
 
-    const KOMMO_ACCESS_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImIwNDE1YTdhMmU1ZWFjNjk2YjFjYjk0Y2FkYWYxYzgzMmMzYjBhYmYwNDllYzI2MTg0MWY1NzQ1YjFkOWRjN2M3NDU5OWFjNjU2NmM2NWUyIn0.eyJhdWQiOiI0MzllYmFjMS04YTM1LTQ5M2QtODY1MS1lYzczY2VlYjEwZDIiLCJqdGkiOiJiMDQxNWE3YTJlNWVhYzY5NmIxY2I5NGNhZGFmMWM4MzJjM2IwYWJmMDQ5ZWMyNjE4NDFmNTc0NWIxZDlkYzdjNzQ1OTlhYzY1NjZjNjVlMiIsImlhdCI6MTc0MzcyNjgzMywibmJmIjoxNzQzNzI2ODMzLCJleHAiOjE3NzUxNzQ0MDAsInN1YiI6IjEyOTY1ODM1IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjM0MzkxMDE5LCJiYXNlX2RvbWFpbiI6ImtvbW1vLmNvbSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJjcm0iLCJmaWxlcyIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiLCJwdXNoX25vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiMTg2N2ZkMDktMTVhYy00ZmVlLWIwZmUtNjQzZjE5MDY1ZDI4IiwiYXBpX2RvbWFpbiI6ImFwaS1jLmtvbW1vLmNvbSJ9.oBVKtIldlUqDIIplSjthgTuTUkcqgUGS9bjIicR76NtGOcVgob6qMLreZhExd3HNBWT9hhSs9u_P9imgwyMcOWdIg6fkx6FezT4BSasLKqG4arR9I_robBfaTfIQORGRNV4yeTP306ycJW_zG588YH14yA_s8_fdZbzEylyWzObqO6LKtUHEb_7l4N-DS8NwU3DdwwNJr5ZmxPNZpTW3WdHy-XUeJs3XmTX5vkoPqrd7n3qRM7DF0eLSi-4r26mfxhi9oGWHrr7uTrvjvWwBxDfUeEgGhH80QEDSgDFq8uiEAxd2LGFyU7ZJVy_c4gFCexWlCZRrHWr3ZzT4cgjGIA'
+//     const KOMMO_ACCESS_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImIwNDE1YTdhMmU1ZWFjNjk2YjFjYjk0Y2FkYWYxYzgzMmMzYjBhYmYwNDllYzI2MTg0MWY1NzQ1YjFkOWRjN2M3NDU5OWFjNjU2NmM2NWUyIn0.eyJhdWQiOiI0MzllYmFjMS04YTM1LTQ5M2QtODY1MS1lYzczY2VlYjEwZDIiLCJqdGkiOiJiMDQxNWE3YTJlNWVhYzY5NmIxY2I5NGNhZGFmMWM4MzJjM2IwYWJmMDQ5ZWMyNjE4NDFmNTc0NWIxZDlkYzdjNzQ1OTlhYzY1NjZjNjVlMiIsImlhdCI6MTc0MzcyNjgzMywibmJmIjoxNzQzNzI2ODMzLCJleHAiOjE3NzUxNzQ0MDAsInN1YiI6IjEyOTY1ODM1IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjM0MzkxMDE5LCJiYXNlX2RvbWFpbiI6ImtvbW1vLmNvbSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJjcm0iLCJmaWxlcyIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiLCJwdXNoX25vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiMTg2N2ZkMDktMTVhYy00ZmVlLWIwZmUtNjQzZjE5MDY1ZDI4IiwiYXBpX2RvbWFpbiI6ImFwaS1jLmtvbW1vLmNvbSJ9.oBVKtIldlUqDIIplSjthgTuTUkcqgUGS9bjIicR76NtGOcVgob6qMLreZhExd3HNBWT9hhSs9u_P9imgwyMcOWdIg6fkx6FezT4BSasLKqG4arR9I_robBfaTfIQORGRNV4yeTP306ycJW_zG588YH14yA_s8_fdZbzEylyWzObqO6LKtUHEb_7l4N-DS8NwU3DdwwNJr5ZmxPNZpTW3WdHy-XUeJs3XmTX5vkoPqrd7n3qRM7DF0eLSi-4r26mfxhi9oGWHrr7uTrvjvWwBxDfUeEgGhH80QEDSgDFq8uiEAxd2LGFyU7ZJVy_c4gFCexWlCZRrHWr3ZzT4cgjGIA'
 
-    const res = await fetch(`https://contatofabianooliveiraadvogadoscombr.kommo.com/api/v4/leads`, {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${KOMMO_ACCESS_TOKEN}`,
-        },
-        body: JSON.stringify([
-            {
-                name, // Nome do lead
-                _embedded: {
-                    contacts: [{ id: contactId }], // Associando o contato criado
-                },
-            },
-        ]),
-    });
+//     const res = await fetch(`https://contatofabianooliveiraadvogadoscombr.kommo.com/api/v4/leads`, {
+//         method: 'POST',
+//         headers: {
+//             "Content-Type": "application/json",
+//             Authorization: `Bearer ${KOMMO_ACCESS_TOKEN}`,
+//         },
+//         body: JSON.stringify([
+//             {
+//                 name, // Nome do lead
+//                 _embedded: {
+//                     contacts: [{ id: contactId }], // Associando o contato criado
+//                 },
+//             },
+//         ]),
+//     });
 
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.detail || "Erro ao criar lead");
+//     const data = await res.json();
+//     if (!res.ok) throw new Error(data.detail || "Erro ao criar lead");
 
-    return data;
-};
+//     return data;
+// };
 
 export async function POST(request: Request) {
 
