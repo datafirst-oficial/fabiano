@@ -132,7 +132,7 @@ export default function Forms({ setOpen, open }: FormsType) {
                             <input required={true} value={data.phone} maxLength={15} onChange={(e) => onChange({ type: 'phone', value: e.target.value })} name="phone" id="phone" placeholder="(11) 99999-9999" type="" className="border bg-transparent py-2 px-4 outline-none focus:border-zinc-500 rounded-xl text-zinc-800" />
                         </div>
                         <div className="flex flex-col gap-2">
-                            <label htmlFor="renda" className="font-semibold">Digite seu WhatsApp:</label>
+                            <label htmlFor="renda" className="font-semibold">Sua renda mensal:</label>
                             <div className="border rounded-2xl p-6">
                                 <div className="flex gap-2">
                                     <input type="radio" onChange={() => onChange({ type: 'renda', value: 'R$ 1.000 até R$ 5.000,00;' })} name="renda" id="renda_01" />
