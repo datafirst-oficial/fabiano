@@ -4,7 +4,7 @@ export async function POST(request: Request) {
 
     const data = await request.json()
 
-    const { name, email, phone, utm_source, utm_campaign, utm_medium, utm_content, utm_term } = data
+    const { name, email, phone, utm_source, utm_campaign, utm_medium, utm_content, utm_term, renda } = data
 
     try {
 
@@ -17,6 +17,7 @@ export async function POST(request: Request) {
                 name,
                 email,
                 phone,
+                renda,
                 utm_source,
                 utm_campaign,
                 utm_medium,
