@@ -64,7 +64,7 @@ export default function Page() {
                 </div>
             </div>
             <div className="sm:-mt-40  bg-gradient-to-r from-[#111] to-[#000] flex flex-col items-center gap-4 text-white text-center px-4 pb-16">
-                <p className="sm:max-w-2xl text-base sm:text-xl"><strong>ATENÇÃO:</strong> Lembre-se que temos dezenas de pessoas interessadas na análise e você foi um dos selecionados, se você faltar à análise estará tirando a oportunidade de outro, que assim como você, deseja acabar com suas dívidas.</p>
+                <p className="sm:max-w-2xl text-base sm:text-xl"><strong>ATENÇÃO:</strong> Lembre-se que temos dezenas de pessoas interessadas na análise e você foi um dos selecionados, se você faltar à análise estará tirando a oportunidade de outro.</p>
                 <p className="sm:max-w-2xl text-sm opacity-40 max-w-3xl font-light">Utilizamos cookies para oferecer uma experiência de atendimento proativa, aprimorar a navegação no site, analisar a utilização do site e ajudar em nossas atividades de marketing. Em alguns países, se você continuar a usar este site e se navegar para outra página, concorda que leu e aceitou a utilização de cookies.</p>
             </div>
             <footer className='bg-zinc-950 py-4 sm:py-8 flex justify-center items-center text-white border-t border-white/20'>

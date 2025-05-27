@@ -22,7 +22,7 @@ export default function Page() {
         description={<>Na consultoria de planejamento previdenciário do nosso escritório, você receberá informações claras sobre quanto deve pagar para se aposentar com um valor digno e suficiente para o seu padrão de vida.</>}
         list={[]}
         btn_text="QUERO ACERTAR NA CONTRATAÇÃO"
-        badge="Exclusivo para empresários de possuem renda acima de R$ 10.000,00/mês"
+        badge="Exclusivo para empresários que possuem renda acima de R$ 10.000,00/mês"
       />
       <Pattern
         open={open}
